@@ -23,7 +23,7 @@ a {
     display: block;
     margin: auto;
     margin-bottom: 20px;
-    cursor: none;
+    cursor: default;
 }
 
 img {
