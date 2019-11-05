@@ -1,0 +1,5 @@
+{
+    "words": ["Hello world.", "Hola mundo.", "こんにちは世界。", "Bonjour le monde.", "नमस्ते दुनिया।", "Hallo welt.", "你好，世界。", "Pozdrav svijete.", "Dia duit ar domhan.", "Witaj świecie.", "Hej världen.", "Ciao mondo."],
+
+    "languages": ["English", "Spanish", "Japenese", "French", "Hindi", "German", "Chinese", "Croation", "Irish", "Polish", "Swedish", "Italian"]
+}
