@@ -41,8 +41,8 @@ function getWords() {
                 } else {
                     i = 0;
                 }
-                hello.style.opacity = '1';
                 getWords();
+                hello.style.opacity = '1';
             }, 5500);
         }
     }
