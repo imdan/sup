@@ -42,8 +42,11 @@ function getWords() {
                     i = 0;
                 }
                 getWords();
-                hello.style.opacity = '1';
             }, 5500);
+
+            setTimeout(function() {
+                hello.style.opacity = '1';
+            }, 6000);
         }
     }
 
