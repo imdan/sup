@@ -2,53 +2,36 @@ let hello = document.querySelector('p'),
     home = document.getElementById('home'),
     i = 0;
 
-setTimeout(function() {
+const words = ["Hello world.", "Hola mundo.", "こんにちは世界。", "Bonjour le monde.", "नमस्ते दुनिया।", "Hallo welt.", "你好，世界。", "Pozdrav svijete.", "Dia duit ar domhan.", "Witaj świecie.", "Hej världen.", "Ciao mondo."];
+
+
+setTimeout(function () {
     hello.style.opacity = '1';
 }, 500);
 
-// setTimeout(function() {
-//     words.style.opacity = '0';
-// }, 5250);
-
-home.addEventListener('click', function(e) {
+home.addEventListener('click', function (e) {
     e.preventDefault();
     location.reload();
 });
 
-window.addEventListener('DOMContentLoaded', getWords);
-
-function getWords() {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('GET', 'words.json', true);
-
-    xhr.onload = function() {
-        if(this.status === 200){
-
-            const list = JSON.parse(this.responseText);
-
-            let output = `${list.words[i]}`;
-
-            hello.innerHTML = output;
-
-            setTimeout(function() {
-                hello.style.opacity = '0';
-            }, 3000);
-
-            setTimeout(function() {
-                if(i < list.words.length - 1) {
-                    i += 1;
-                } else {
-                    i = 0;
-                }
-                getWords();
-            }, 5500);
-
-            setTimeout(function() {
-                hello.style.opacity = '1';
-            }, 6000);
+function translate() {
+    setTimeout(function () {
+        hello.style.opacity = '0';
+    }, 3000);
+    
+    setTimeout(function () {
+        if (i < words.length - 1) {
+            i += 1;
+        } else {
+            i = 0;
         }
-    }
 
-    xhr.send();
+        hello.innerHTML = words[i];
+        hello.style.opacity = '1';
+
+        translate();
+    }, 5500);
+    
 }
+
+translate();
