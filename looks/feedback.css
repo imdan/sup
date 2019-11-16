@@ -1,7 +1,7 @@
 #feedback_words {
     display: block;
     margin-bottom: 0px;
-    margin-top: 250px;
+    margin-top: 200px;
 }
 
 #wrap {
@@ -9,7 +9,6 @@
 }
 
 #rectangle {
-    top: 40vh;
     width: 350px;
     height: auto;
     margin: auto;
@@ -20,7 +19,7 @@
 
 #input {
     position: absolute;
-    top: 305px;
+    top: 254px;
     width: 280px;
     height: 20px;
     margin-left: 30px;
@@ -56,7 +55,6 @@ button:active {
 }
 
 #paperplane {
-    top: 56vh;
     width: 65px;
     display: block;
     height: auto;
@@ -81,7 +79,7 @@ button:active {
     }
 
     #input {
-        top: 300px;
+        top: 250px;
         width: 250px;
     }
 
