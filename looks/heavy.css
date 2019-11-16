@@ -1,0 +1,19 @@
+#heavy_words {
+    margin-top: 150px;
+    margin-bottom: 342px;
+}
+
+#heavy {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: auto;
+    opacity: 1;
+    /* transition-property: opacity;
+    transition-duration: 2.5s; */
+}
+
+#issa {
+    font-size: 11px;
+    opacity: 0;
+}
