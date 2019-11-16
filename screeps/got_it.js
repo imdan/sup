@@ -2,8 +2,8 @@ let gotIt = document.getElementById('got_it');
 
 setTimeout(function(){
     gotIt.style.opacity = '1';
-}, 3000);
+}, 2000);
 
 setTimeout(function() {
     gotIt.style.opacity = '0';
-}, 6000);
+}, 5000);
