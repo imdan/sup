@@ -43,8 +43,12 @@ form.addEventListener('submit', function(e) {
         rectangle.style.opacity = '0';
         // paperplane.setAttribute('disabled', 'disabled');
         input.setAttribute('placeholder', '');
-        input.value = '';
         // input.setAttribute('disabled', 'disabled');
+
+        setTimeout(function(){
+            form.submit();
+        },2500);
+
         }
 });
 
@@ -59,8 +63,11 @@ paperplane.addEventListener('click', function(e) {
         rectangle.style.opacity = '0';
         // paperplane.setAttribute('disabled', 'disabled');
         input.setAttribute('placeholder', '');
-        input.value = '';
         // input.setAttribute('disabled', 'disabled');
+
+        setTimeout(function(){
+            form.submit();
+        },2500);
     }
 });
 
