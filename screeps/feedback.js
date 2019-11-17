@@ -27,7 +27,7 @@ input.addEventListener('blur', function() {
 
         setTimeout(function(){
             footer.style.opacity = '1';
-        },250);
+        },150);
     }
 
     if (status === 'submitted') {
