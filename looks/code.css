@@ -1,0 +1,37 @@
+#code_words {
+    margin-top: 100px;
+    margin-bottom: 5px;
+    letter-spacing: 10px;
+}
+
+#s-u-p {
+    width: 60px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 210px;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 2.5s;
+}
+
+#morse {
+    width: 160px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-bottom: 0px;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 2.5s;
+}
+
+#binary {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    opacity: 0;
+    font-family: monospace;
+    transition-property: opacity;
+    transition-duration: 2.5s;
+}
