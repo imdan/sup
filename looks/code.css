@@ -31,7 +31,7 @@
     margin-top: 5px;
     margin-bottom: 25px;
     opacity: 0;
-    font-family: monospace;
+    font-family: 'Courier New', Courier, monospace;
     transition-property: opacity;
     transition-duration: 2.5s;
 }
