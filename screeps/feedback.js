@@ -16,6 +16,7 @@ input.addEventListener('focus', function() {
     
     if (screen.width < 500) {
         footer.style.display = 'none';
+        footer.style.opacity = '0';
     }
 });
 
@@ -23,12 +24,27 @@ input.addEventListener('blur', function() {
 
     if (screen.width < 500) {
         footer.style.display = 'block';
+
+        setTimeout(function(){
+            footer.style.opacity = '1';
+        },250);
     }
 
     if (status === 'submitted') {
         rectangle.style.opacity = '0';
     } else {
         rectangle.style.opacity = '.65';
+    }
+});
+
+input.addEventListener('keydown', function(e) {
+    // disable go key on mobile
+
+    let code = (e.keyCode ? e.keyCode : e.which);
+
+    if((screen.width < 500) && (code == 13) || (code == 10)) {
+        input.blur();
+        return false;
     }
 });
 
