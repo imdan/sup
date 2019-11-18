@@ -1,0 +1,12 @@
+#fine {
+    width: 175px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 200px;
+    /* opacity: 1; */
+}
+
+#fine_wrap {
+    padding-right: 23px;
+}
