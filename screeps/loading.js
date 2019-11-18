@@ -15,4 +15,4 @@ function getRandomNum(min, max){
 setTimeout(function() {
     loadingWords.style.opacity = '0';
     loading.style.opacity = '0';
-}, getRandomNum(0,2));
+}, getRandomNum(1,2));
