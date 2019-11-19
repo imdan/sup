@@ -1,0 +1,16 @@
+#adam_words {
+    margin-top: 175px;
+}
+
+#adam {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 75px;
+    /* opacity: 1; */
+}
+
+#adam_wrap {
+    padding-left: 2px;
+}
