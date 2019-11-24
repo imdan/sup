@@ -6,18 +6,15 @@ let words = document.getElementById('keepup_words'),
     screenSize = window.innerWidth,
     sorry = document.getElementById('small_screen'),
     hint,
+    hide,
     count = 0;
 
 counter.innerHTML = count;  
 
 console.log(floor.offsetTop);
-console.log(`on load: ${balloon.offsetTop - balloon.offsetHeight}`);
+// console.log(`on load: ${balloon.offsetTop - balloon.offsetHeight}`);
 
-// window.addEventListener('load', function() {
-//     balloon.style.left = `${50 + (balloon.clientWidth/2)}%`;
-//     console.log(`balloon spot: ${50 + (balloon.clientWidth/2)}%`);
-// });
-
+// random num function
 
 function num(min, max) {
     return Math.floor((Math.random()*(max-min+1)+min));
@@ -33,14 +30,14 @@ setTimeout(function() {
 // drop balloon
 
 setTimeout(function() {
-    balloon.style.top = '518px';
+    balloon.style.top = '468px';
 }, 2500);
 
 // add bounce on land, no tap
 
 setTimeout(function() {
     
-    if ((balloon.offsetTop + balloon.offsetHeight) >= (572)) {
+    if ((balloon.offsetTop + balloon.offsetHeight) >= (522)) {
         balloon.style.animationName = 'wobble, bounce';
         balloon.style.animationDuration = '1.5s, .5s';
         balloon.style.animationIterationCount = 'infinite, 1';
@@ -49,15 +46,18 @@ setTimeout(function() {
 
 }, 4500);
 
-function giveHint() {
-    giveHint = setTimeout(function() {counter.innerHTML = '(tap the balloon)'; counter.style.opacity = '1'; counter.style.fontSize = '14px';}, 10000);
+// hide words give hint if no clicks
+
+function hideWords() {
+    hide = setTimeout(function() {words.style.opacity = '0'; console.log('hide');}, 8000);
 }
 
-giveHint();
+function giveHint() {
+    hint = setTimeout(function() {words.innerHTML = '(tap the balloon)'; words.style.opacity = '1';}, 10000);
+}
 
-// setTimeout(function() {
-//     words.style.opacity = '0';
-// }, 3000);
+hideWords();
+giveHint();
 
 // click event on the balloon, probably way too much code here but it works for now
 
@@ -65,13 +65,13 @@ balloon.addEventListener('click', function(e) {
 
     // cancel hint
 
-    clearTimeout(giveHint);
+    clearTimeout(hide);
+    clearTimeout(hint);
 
     // hides initial words, shows counter
 
     words.style.opacity = '0';
     sorry.style.opacity = '0';
-    counter.style.fontSize = '18px';
     counter.style.opacity = '1';
 
     // reset score p
@@ -105,7 +105,7 @@ balloon.addEventListener('click', function(e) {
     let toggle;
 
     toggle = num(0,4);
-    console.log(toggle);
+    // console.log(toggle);
 
 
     if (screenSize >= 800) {
@@ -144,24 +144,6 @@ balloon.addEventListener('click', function(e) {
         }
     }
 
-    // if (toggle === 0) {
-    //     balloon.style.left = '30vw';
-    //     balloon.style.transform = 'rotate(-60deg)';
-    // } else if (toggle === 1) {
-    //     balloon.style.left = '35vw';
-    //     balloon.style.transform = 'rotate(-20deg)';
-    // } else if (toggle === 2) {
-    //     balloon.style.left = '45vw';
-    //     balloon.style.transform = 'rotate(0deg)';
-    // } else if (toggle === 3) {
-    //     balloon.style.left = '55vw';
-    //     balloon.style.transform = 'rotate(20deg)';
-    // } else {
-    //     balloon.style.left = '60vw';
-    //     balloon.style.transform = 'rotate(60deg)';
-    // }
-
-
     // drop
 
     setTimeout(function() {
@@ -176,10 +158,10 @@ balloon.addEventListener('click', function(e) {
             balloon.style.transitionDuration = '1.25s';
         }
         
-        balloon.style.top = '518px';
+        balloon.style.top = '468px';
         balloon.style.transitionTimingFunction = 'linear';
         balloon.style.transform = 'rotate(0deg)';
-        console.log(`on drop: ${balloon.offsetTop - balloon.offsetHeight}`);
+        // console.log(`on drop: ${balloon.offsetTop + balloon.offsetHeight}`);
     }, 250);
 
 
@@ -190,7 +172,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (560)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;  
@@ -206,7 +188,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (560)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;  
@@ -222,7 +204,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (560)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count; 
@@ -238,7 +220,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (560)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;
