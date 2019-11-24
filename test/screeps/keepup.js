@@ -145,11 +145,11 @@ balloon.addEventListener('click', function(e) {
 
     setTimeout(function() {
 
-        if (count >= 75) {
+        if (count >= 60) {
             balloon.style.transitionDuration = '.5s';
-        } else if (count >= 35 && count < 75) {
+        } else if (count >= 25 && count < 60) {
             balloon.style.transitionDuration = '.75s';
-        } else if (count >= 10 && count < 35) {
+        } else if (count >= 10 && count < 25) {
             balloon.style.transitionDuration = '1s';
         } else {
             balloon.style.transitionDuration = '1.25s';
@@ -165,7 +165,7 @@ balloon.addEventListener('click', function(e) {
     // land
     
 
-    if (count >= 75) {
+    if (count >= 60) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
@@ -181,7 +181,7 @@ balloon.addEventListener('click', function(e) {
                 balloon.style.animationTimingFunction = 'ease, ease-out';
             }
         }, 750);
-    } else if (count >= 35 && count < 75) {
+    } else if (count >= 25 && count < 60) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
@@ -197,7 +197,7 @@ balloon.addEventListener('click', function(e) {
                 balloon.style.animationTimingFunction = 'ease, ease-out';
             }
         }, 1000);
-    } else if (count >= 10 && count < 35) {
+    } else if (count >= 10 && count < 25) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
