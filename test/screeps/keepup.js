@@ -169,7 +169,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (438)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;  
@@ -185,7 +185,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (438)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;  
@@ -201,7 +201,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (438)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count; 
@@ -217,7 +217,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (438)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;
