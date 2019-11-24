@@ -4,7 +4,6 @@ let words = document.getElementById('keepup_words'),
     floor = document.querySelector('hr'),
     score = document.getElementById('keepup_score'),
     screenSize = window.innerWidth,
-    sorry = document.getElementById('small_screen'),
     hint,
     hide,
     count = 0;
@@ -24,20 +23,19 @@ function num(min, max) {
 
 setTimeout(function() {
     words.style.opacity = '1';
-    sorry.style.opacity = '1';
 }, 500);
 
 // drop balloon
 
 setTimeout(function() {
-    balloon.style.top = '468px';
+    balloon.style.top = '393px';
 }, 2500);
 
 // add bounce on land, no tap
 
 setTimeout(function() {
     
-    if ((balloon.offsetTop + balloon.offsetHeight) >= (522)) {
+    if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
         balloon.style.animationName = 'wobble, bounce';
         balloon.style.animationDuration = '1.5s, .5s';
         balloon.style.animationIterationCount = 'infinite, 1';
@@ -71,7 +69,6 @@ balloon.addEventListener('click', function(e) {
     // hides initial words, shows counter
 
     words.style.opacity = '0';
-    sorry.style.opacity = '0';
     counter.style.opacity = '1';
 
     // reset score p
@@ -158,7 +155,7 @@ balloon.addEventListener('click', function(e) {
             balloon.style.transitionDuration = '1.25s';
         }
         
-        balloon.style.top = '468px';
+        balloon.style.top = '393px';
         balloon.style.transitionTimingFunction = 'linear';
         balloon.style.transform = 'rotate(0deg)';
         // console.log(`on drop: ${balloon.offsetTop + balloon.offsetHeight}`);
@@ -172,7 +169,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;  
@@ -188,7 +185,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;  
@@ -204,7 +201,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count; 
@@ -220,7 +217,7 @@ balloon.addEventListener('click', function(e) {
         setTimeout(function() {
             console.log(`on land: ${balloon.offsetTop + balloon.offsetHeight}`);
     
-            if ((balloon.offsetTop + balloon.offsetHeight) >= (516)) {
+            if ((balloon.offsetTop + balloon.offsetHeight) >= (440)) {
                 count = 0;
                 score.style.transitionDuration = '2.5s';
                 counter.innerHTML = count;

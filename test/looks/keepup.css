@@ -9,13 +9,6 @@
     margin-bottom: 0;
 }
 
-#small_screen {
-    position: absolute;
-    display: none;
-    font-size: 10px;
-    margin: 50px 25px;
-}
-
 #keepup_score {
     position: absolute;
     width: 100%;
@@ -36,7 +29,7 @@
     position: absolute;
     left: 48.5vw;
     /* left: 42%; */
-    top: 250px;
+    top: 200px;
     width: 40px;
     height: auto;
     display: block;
@@ -51,20 +44,13 @@
 }
 
 hr {
-    margin-top: 350px;
+    margin-top: 275px;
     opacity: .25;
 }
 
 @media screen and (max-width: 800px) {
     #balloon {
         left: 45vw;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    #small_screen {
-        display: block;
-        opacity: 0;
     }
 }
 
