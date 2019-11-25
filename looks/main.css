@@ -64,7 +64,7 @@ p {
     height: 27px;
     display: inline-block;
     margin-bottom: 8px;
-    margin-left: 47px;
+    /* margin-left: 47px; */
     margin-right: 4px;
     cursor: default;
 }
