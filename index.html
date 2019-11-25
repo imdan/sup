@@ -17,7 +17,9 @@
 </head>
 <body>
 
-    <p>Message: Nevermind.</p>
+    <p>Silence is <span>golden</span>.</p>
+
+    <img src="assets/golden.jpg" alt="golden" id="golden">
 
 
     <!-- for now -->
@@ -27,6 +29,15 @@
         <a href="https://www.sup.cool" id="home"><img src="assets/sup.jpg" alt="sup." id="sup"></a>
 
     </footer>
+
+    <script>
+    let words = document.querySelector('p');
+
+    setTimeout(function() {
+        words.style.opacity = '1';
+    }, 500);
+    
+    </script>
     
 </body>
 </html>
