@@ -48,7 +48,7 @@ p {
     height: 50px;
     display: inline-block;
     margin: auto;
-    margin-left: 48px;
+    /* margin-left: 48px; */
     cursor: default;
 }
 
