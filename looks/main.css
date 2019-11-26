@@ -1,5 +1,5 @@
 body {
-    background: white;
+    background: black;
     overflow-x: hidden;
     overflow-y: hidden;
     padding: 0 0;
@@ -118,6 +118,7 @@ p {
 }
 
 footer {
+    display: none;
     width: 100%;
     height: auto;
     position: fixed;
