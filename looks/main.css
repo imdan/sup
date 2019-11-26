@@ -19,20 +19,6 @@ p {
     
 }
 
-#silence {
-    transform: rotateY(180deg);
-}
-
-#golden {
-    display: block;
-    margin: auto;
-    width: 200px;
-    height: auto;
-    margin-top: 105px;
-    /* padding-right: 10px; */
-
-}
-
 #back {
     width: 50px;
     height: 23px;
@@ -135,12 +121,12 @@ footer {
     width: 100%;
     height: auto;
     position: fixed;
-    bottom: 0;
+    top: 0;
     margin-left: 0;
     text-align: center;
     padding-bottom: 10px;
     opacity: 1;
     transition-property: opacity;
     transition-duration: 1s;
-    /* transform: rotate(180deg); */
+    transform: rotate(180deg);
 }
