@@ -16,6 +16,10 @@ p {
     transition-property: opacity;
     transition-duration: 2.5s;
     margin-top: 100px;
+    
+}
+
+#silence {
     transform: rotateY(180deg);
 }
 
