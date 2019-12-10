@@ -19,6 +19,14 @@ p {
     
 }
 
+#dude {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 350px;
+}
+
 #back {
     width: 50px;
     height: 23px;
