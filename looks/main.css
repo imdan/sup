@@ -37,20 +37,21 @@ p {
 }
 
 #back_arrow {
+    position: absolute;
     width: 40px;
     height: auto;
-    display: inline-block;
-    margin-bottom: 12px;
-    opacity: .25;
+    opacity: .025;
+    bottom: 28px;
+    left: 20vw;
 }
 
 #back_arrow:hover {
     transform: translateX(-2px);
-    opacity: .5;
+    opacity: .1;
 }
 
 #back_arrow:active {
-    opacity: 1;
+    opacity: .25;
 }
 
 #home {
@@ -109,20 +110,21 @@ p {
 }
 
 #forward_arrow {
+    position: absolute;
     width: 42px;
     height: auto;
-    display: inline-block;
-    margin-bottom: 15px;
-    opacity: .25;
+    opacity: .025;
+    bottom: 30px;
+    right: 20vw;
 }
 
 #forward_arrow:hover {
     transform: translateX(2px);
-    opacity: .5;
+    opacity: .1;
 }
 
 #forward_arrow:active {
-    opacity: 1;
+    opacity: .25;
 }
 
 footer {
