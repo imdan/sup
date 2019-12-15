@@ -1,10 +1,10 @@
 let back = document.getElementById('back_arrow'),
     forward = document.getElementById('forward_arrow'), 
     dude = document.getElementById('dude'),
-    here = 3,
+    here = 4,
     i = here;
 
-const titles = ['nothing', 'no words', 'headwind', 'hindsight'];
+const titles = ['nothing', 'no words', 'headwind', 'hindsight', 'head down'];
 
 
 dude.setAttribute('src', `assets/dude_${here}.jpg`);
@@ -35,6 +35,9 @@ forward.addEventListener('click', function() {
         dude.setAttribute('title', `${titles[i]}`);
     }
 });
+
+
+
 
 
 
