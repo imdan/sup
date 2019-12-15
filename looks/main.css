@@ -20,11 +20,12 @@ p {
 }
 
 #dude {
-    width: 50px;
+    width: 60px;
     height: auto;
     display: block;
     margin: auto;
     margin-top: 350px;
+    padding-right: 6px;
 }
 
 #back {
@@ -40,18 +41,18 @@ p {
     position: absolute;
     width: 40px;
     height: auto;
-    opacity: .025;
+    opacity: .1;
     bottom: 28px;
     left: 20vw;
 }
 
 #back_arrow:hover {
     transform: translateX(-2px);
-    opacity: .1;
+    opacity: .2;
 }
 
 #back_arrow:active {
-    opacity: .25;
+    opacity: .4;
 }
 
 #home {
@@ -70,34 +71,97 @@ p {
     /* margin: auto; */
 }
 
-#feedback {
+#more {
+    position: absolute;
+    width: 28px;
+    height: auto;
+    display: inline-block;
+    top: 38px;
+    left: 20vw;
+    opacity: .1;
+    /* transition-property: opacity;
+    transition-duration: 2.5s; */
+}
+
+#more:hover {
+    transform: translateX(2px);
+    opacity: .2;
+}
+
+#more:active {
+    opacity: .4;
+}
+
+#circle {
+    position: absolute;
+    width: 17px;
+    height: auto;
+    display: inline-block;
+    top: 43px;
+    left: 29vw;
+    opacity: 0;
+    transform: translateX(-28px);
+    transition-property: transform, opacity;
+    transition-duration: 1.5s, 1s;
+}
+
+#square {
+    position: absolute;
+    width: 17px;
+    height: auto;
+    display: inline-block;
+    top: 43px;
+    left: 36vw;
+    opacity: 0;
+    transform: translateX(-56px);
+    transition-property: transform, opacity;
+    transition-duration: 1.5s, 1s;
+}
+
+#note {
+    position: absolute;
+    width: 17px;
+    height: auto;
+    display: inline-block;
+    top: 42px;
+    left: 43vw;
+    opacity: 0;
+    transform: translateX(-84px);
+    transition-property: transform, opacity;
+    transition-duration: 1.5s, 1s;
+}
+
+/* #feedback {
+    position: absolute;
     width: 46px;
     height: 27px;
     display: inline-block;
-    margin-bottom: 8px;
-    /* margin-left: 47px; */
-    margin-right: 4px;
     cursor: default;
-}
+    top: 35px;
+    right: 20vw;
+    opacity: .025;
+} */
 
 #paperplane_link {
+    position: absolute;
     width: 46px;
     height: auto;
     display: inline-block;
-    margin-bottom: 13px;
     transform: rotate(-14deg);
-    opacity: .25;
+    top: 35px;
+    right: 20vw;
+    opacity: .1;
     /* transition-property: opacity;
     transition-duration: 2.5s; */
 }
 
 #paperplane_link:hover {
     transform: rotate(-14deg) translateX(2px);
-    opacity: .5;
+    opacity: .2;
 }
 
 #paperplane_link:active {
-    opacity: 1;
+    opacity: .4;
 }
 
 #forward {
@@ -113,18 +177,18 @@ p {
     position: absolute;
     width: 42px;
     height: auto;
-    opacity: .025;
+    opacity: .1;
     bottom: 30px;
     right: 20vw;
 }
 
 #forward_arrow:hover {
     transform: translateX(2px);
-    opacity: .1;
+    opacity: .2;
 }
 
 #forward_arrow:active {
-    opacity: .25;
+    opacity: .4;
 }
 
 footer {
