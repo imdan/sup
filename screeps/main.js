@@ -1,10 +1,10 @@
 let back = document.getElementById('back_arrow'),
     forward = document.getElementById('forward_arrow'), 
-    dude = document.getElementById('dude'),
-    here = 4,
+    dude = document.querySelector('.dude'),
+    here = 5,
     i = here;
 
-const titles = ['nothing', 'no words', 'headwind', 'hindsight', 'head down'];
+const titles = ['nothing', 'no words', 'headwind', 'hindsight', 'head down', 'drift'];
 
 
 dude.setAttribute('src', `assets/dude_${here}.jpg`);
@@ -21,6 +21,13 @@ back.addEventListener('click', function() {
         dude.setAttribute('src', `assets/dude_${i}.jpg`);
         dude.setAttribute('title', `${titles[i]}`);
     }
+
+    if (i === 5) {
+        dude.setAttribute('id', 'drift');
+    } else {
+        dude.setAttribute('id', '');
+    }
+
 });
 
 forward.addEventListener('click', function() {
@@ -34,6 +41,13 @@ forward.addEventListener('click', function() {
         dude.setAttribute('src', `assets/dude_${i}.jpg`);
         dude.setAttribute('title', `${titles[i]}`);
     }
+
+    if (i === 5) {
+        dude.setAttribute('id', 'drift');
+    } else {
+        dude.setAttribute('id', '');
+    }
+    
 });
 
 

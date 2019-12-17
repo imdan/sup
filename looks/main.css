@@ -19,13 +19,24 @@ p {
     
 }
 
-#dude {
+.dude {
     width: 60px;
     height: auto;
     display: block;
     margin: auto;
     margin-top: 350px;
     padding-right: 8px;
+}
+
+#drift {
+    position: absolute;
+    transform: scaleX(-1);
+    left: -75vw;
+    animation-name: drift;
+    animation-duration: 18s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
 }
 
 #back {
@@ -204,4 +215,37 @@ footer {
     transition-property: opacity;
     transition-duration: 1s;
     /* transform: rotate(180deg); */
+}
+
+
+@keyframes drift {
+    0% {
+        transform: scaleX(-1) rotate(95deg);
+        left: -75vw;
+    }
+
+    25% {
+        transform: scaleX(-1) rotate(-180deg);
+        left: 50vw;
+    }
+
+    50% {
+        transform: scaleX(-1) rotate(-420deg);
+        left: 175vw;
+    }
+
+    51% {
+        transform: scaleX(1) rotate(95deg);
+        left: 175vw;
+    }
+
+    76% {
+        transform: scaleX(1) rotate(-140deg);
+        left: 50vw;
+    }
+
+    100% {
+        transform: scaleX(1) rotate(-420deg);
+        left: -75vw;
+    }
 }
