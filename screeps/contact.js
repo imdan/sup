@@ -13,6 +13,7 @@ let feedbackWords = document.getElementById('feedback_words'),
 
 input.addEventListener('focus', function() {
     rectangle.style.opacity = '1';
+    input.setAttribute('placeholder', '');
     
     if (screen.width < 500) {
         footer.style.display = 'none';
@@ -21,6 +22,8 @@ input.addEventListener('focus', function() {
 });
 
 input.addEventListener('blur', function() {
+
+    input.setAttribute('placeholder', 'seriously, whatever you want...');
 
     if (screen.width < 500) {
         footer.style.display = 'block';
@@ -33,7 +36,7 @@ input.addEventListener('blur', function() {
     if (status === 'submitted') {
         rectangle.style.opacity = '0';
     } else {
-        rectangle.style.opacity = '.65';
+        rectangle.style.opacity = '.4';
     }
 });
 
@@ -42,9 +45,12 @@ input.addEventListener('keydown', function(e) {
 
     let code = (e.keyCode ? e.keyCode : e.which);
 
-    if((screen.width < 500) && (code == 13) || (code == 10)) {
-        input.blur();
+    if((code == 13) || (code == 10)) {
+        // input.blur();
+        input.innerText += "\n";
         return false;
+    } else {
+        return true;
     }
 });
 
