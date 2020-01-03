@@ -25,12 +25,12 @@ i {
 }
 
 #card-2 {
-  height: 62vh;
+  height: 60vh;
 }
 
 .collection {
   overflow: scroll;
-  height: 40vh;
+  height: 38vh;
 }
 
 .collection::-webkit-scrollbar {
