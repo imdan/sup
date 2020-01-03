@@ -48,6 +48,7 @@ textarea::-webkit-scrollbar {
 #input::placeholder {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    opacity: .75;
 }
 
 #input:focus {
