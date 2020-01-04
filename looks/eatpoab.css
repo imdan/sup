@@ -83,6 +83,15 @@ h1, h3 {
     -webkit-transition: opacity 2s;
 }
 
+#poab {
+    font-size: 17px;
+}
+
+#dotcom {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
 h2 {
     color: firebrick;
     text-align: center;
@@ -104,6 +113,7 @@ h4 {
     transition: opacity 2s;
     -webkit-transition: opacity 2s;
 }
+
 
 .hide {
     opacity: 0;
