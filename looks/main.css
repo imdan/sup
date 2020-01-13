@@ -31,11 +31,11 @@ p {
 /* dude */
 
 .dude {
-    width: 100px;
+    width: 150px;
     height: auto;
     display: block;
     margin: auto;
-    margin-top: 225px;
+    margin-top: 200px;
     padding-right: 8px;
 }
 
