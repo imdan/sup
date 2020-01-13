@@ -3,6 +3,10 @@ let feedback = document.getElementById('paperplane_link'),
     circle = document.getElementById('circle'),
     square = document.getElementById('square'),
     about = document.getElementById('about'),
+    homeLink = document.getElementById('home_link'), 
+    projectsLink = document.getElementById('projects_link'), 
+    aboutLink = document.getElementById('about_link'), 
+    contactLink = document.getElementById('contact_link'),
     listen = document.getElementById('listen'),
     open = false;
 
@@ -39,27 +43,27 @@ more.addEventListener('click', function() {
 });
 
 
-circle.addEventListener('click', function() {
-    if (open === true) {
-        location.href = '/';
+homeLink.addEventListener('click', function(e) {
+    if (open === false) {
+        e.preventDefault();
     }
 });
 
-square.addEventListener('click', function() {
-    if (open === true) {
-        location.href = '/projects.html';
+projectsLink.addEventListener('click', function(e) {
+    if (open === false) {
+        e.preventDefault();
     }
 });
 
-about.addEventListener('click', function() {
-    if (open === true) {
-        location.href = '/about.html';
+aboutLink.addEventListener('click', function(e) {
+    if (open === false) {
+        e.preventDefault();
     }
 });
 
-feedback.addEventListener('click', function() {
-    if (open === true) {
-        location.href = '/contact.html';
+contactLink.addEventListener('click', function(e) {
+    if (open === false) {
+        e.preventDefault();
     }
 });
 

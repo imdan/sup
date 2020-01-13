@@ -61,52 +61,81 @@ p {
 }
 
 #circle {
-    position: absolute;
     width: 20px;
     height: auto;
     display: inline-block;
-    top: 44px;
-    left: 15vw;
     opacity: 0;
     transition-property: opacity;
     transition-duration: 1s;
+}
+
+#home_link {
+    position: absolute;
+    top: 44px;
+    left: 15vw;
+    display: block;
+    width: 20px;
+    cursor: default;
+    /* background-color: blue; */
+
 }
 
 #square {
-    position: absolute;
     width: 20px;
     height: auto;
     display: inline-block;
-    top: 44px;
-    left: 32vw;
     opacity: 0;
     transition-property: opacity;
     transition-duration: 1s;
+}
+
+#projects_link {
+    position: absolute;
+    top: 44px;
+    left: 32vw;
+    display: block;
+    width: 20px;
+    cursor: default;
+    /* background-color: green; */
 }
 
 #about {
-    position: absolute;
     width: 34px;
     height: auto;
     display: inline-block;
-    top: 36px;
-    right: 33vw;
     opacity: 0;
     transition-property: opacity;
     transition-duration: 1s;
 }
 
-#paperplane_link {
+#about_link {
     position: absolute;
+    top: 36px;
+    right: 33vw;
+    display: block;
+    width: 34px;
+    cursor: default;
+    /* background-color: purple; */
+}
+
+#paperplane_link {
     width: 42px;
     height: auto;
     display: inline-block;
     transform: rotate(-14deg);
-    top: 40px;
-    right: 15vw;
     opacity: 0;
     transition-property: opacity;
     transition-duration: 1s;
+}
+
+#contact_link {
+    position: absolute;
+    top: 40px;
+    right: 15vw;
+    display: block;
+    width: 42px;
+    cursor: default;
+    /* background-color: orange; */
 }
 
 /* #paperplane_link:hover {
