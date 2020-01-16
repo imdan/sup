@@ -4,15 +4,29 @@ let search = document.getElementById('search'),
     button = document.getElementById('button'),
     rectangle = document.getElementById('rectangle'),
     re= /^[a-zA-Z]{2,}$/i, 
-    alert1 = document.getElementById('alert');
+    alert1 = document.getElementById('alert'), 
+    footer = document.querySelector('footer');
 
 
 search.addEventListener('focus', function () {
     rectangle.style.opacity = '1';
+
+    if (screen.width < 500) {
+        footer.style.display = 'none';
+        footer.style.opacity = '0';
+    }
 });
 
 search.addEventListener('blur', function () {
     rectangle.style.opacity = '.5';
+
+    if (screen.width < 500) {
+        footer.style.display = 'block';
+
+        setTimeout(function(){
+            footer.style.opacity = '1';
+        },150);
+    }
 
 });
 
@@ -26,6 +40,8 @@ form.addEventListener('submit', getWords);
 
 
 function getWords(e) {
+
+    search.blur();
 
     e.preventDefault();
 
