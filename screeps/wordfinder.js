@@ -25,7 +25,9 @@ form.addEventListener('submit', getWords);
 
 
 
-function getWords() {
+function getWords(e) {
+
+    e.preventDefault();
 
     if (!re.test(search.value)) {
         document.getElementById('words').innerHTML = '';
