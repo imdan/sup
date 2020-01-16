@@ -179,7 +179,7 @@ p {
 /* styles for PROJECT PAGE elements */
 
 #projects {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     height: 52vh;
     overflow: scroll;
     padding: 0;
