@@ -67,10 +67,3 @@ contactLink.addEventListener('click', function(e) {
     }
 });
 
-
-
-if (location.href.includes('projects')) {
-    setTimeout(function() {
-        listen.style.opacity = '0';
-    }, 2500);
-}
