@@ -186,6 +186,7 @@ p {
     width: 250px;
     margin-left: auto;
     margin-right: auto;
+    scrollbar-width: none;
 }
 
 #projects::-webkit-scrollbar {
