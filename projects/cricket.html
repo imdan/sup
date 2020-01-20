@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>cricket</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Cricket Darts Scoreboard" />
+    <meta name="keywords" content="cricket, darts, scoreboard, dart" />
+    <meta name="author" content="Dan McGuire" />
+
+    <!-- <link rel="stylesheet" href="../looks/cricket.css"> -->
+    <link rel="stylesheet" href="../looks/cricket.css">
+    <link href="https://fonts.googleapis.com/css?family=Kalam" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../assets/dart_favicon_32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="../assets/dart_favicon_16x16.png" sizes="16x16" />
+
+</head>
+
+<body>
+
+    <header>
+
+        <img src="../assets/cricket_w.png">
+        <!-- <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
+        
+
+        <p>add players - set switch - tap to add/remove</p>
+        <p id="rules" class="header-link">rules</p><p id="reset" class="header-link">reset</p>
+        
+
+    </header>
+
+
+    <div class="ruleboard">
+
+        <p class="rules">
+            The object is for a player to hit each number and the bullseye three times. The first player to hit a number three times owns that number and it is said to be opened. Further hits on the opened number score that number of points (e.g. triple 20 gains 60 points) until the opponent also hits that number three times and closes it, then that number is removed from play. 
+        </p>
+
+        <p class="rules">
+            The double (outer) ring on the dart board counts as two hits and the treble (inner) ring counts as three. The outer bullseye ring counts as one bullseye and the inner circle (or double bull) counts as two.
+        </p>
+
+        <p class="rules">
+            Once a player has opened or closed all the required numbers and bull and has equal or more points than his opponent, that player wins. 
+        </p>
+
+        <p class="source">Source: <a href="https://en.wikipedia.org/wiki/Cricket_(darts)#Scoring" target="_blank">Wikipedia</a></p>
+
+
+    </div>
+
+
+    <div id="win-alert">
+
+        <div class="win-words">
+
+                <h2 id="winner">Player one wins!</h2>
+
+                <p id="view" class="header-link">view game</p><p id="restart" class="header-link">new game</p>
+
+        </div>
+
+    </div>
+
+    
+
+    <div class="chalkboard">
+
+        <div class="column p1_chalk">
+
+            <div class="players">
+                
+                <div class="player">
+
+                    <input type="text" placeholder="P1" id="player1" class="player-name">
+
+                </div>
+                
+            </div>
+
+            <ul>
+
+                <li><a href="#" class="chalk" id="p1_twenty"></a></li>
+
+                <li><a href="#" class="chalk" id="p1_nineteen"></a></li>
+
+                <li><a href="#" class="chalk" id="p1_eighteen"></a></li>
+                
+                <li><a href="#" class="chalk" id="p1_seventeen"></a></li>
+
+                <li><a href="#" class="chalk" id="p1_sixteen"></a></li>
+
+                <li><a href="#" class="chalk" id="p1_fifteen"></a></li>
+                
+                <li><a href="#" class="chalk" id="p1_bully"></a></li>
+
+            </ul>
+
+            <div class="scores">
+                    <div id="player1-score" class="score">0</div>
+            </div>
+
+        </div>
+
+        <div class="column numbers">
+
+            <div class="players" id="space">
+                
+                <p class="alert" id="alert"></p>
+                
+            </div>
+
+            <ul>
+
+                <li id="twenty">20</li>
+                <li id="nineteen">19</li>
+                <li id="eighteen">18</li>
+                <li id="seventeen">17</li>
+                <li id="sixteen">16</li>
+                <li id="fifteen">15</li>
+                <li id="bully">Bully</li>
+
+            </ul>
+
+            <div class="scores" id="space">
+
+                 <!--
+                    slider from codepen
+                    
+                    https://codepen.io/AllThingsSmitty/pen/MmxxOz/
+
+                    shout out Matt Smith
+                -->
+        
+                <div class="container">
+                    <p>-</p>
+                    <label class="switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" checked/>
+                        <div class="slider round"></div>
+                    </label>
+                    <p>+</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="column p2_chalk">
+
+            <div class="players">
+                
+                <div class="player">
+
+                    <input type="text" placeholder="P2" id="player2" class="player-name">
+
+                </div>
+                
+            </div>
+
+            <ul>
+
+                <li><a href="#" class="chalk" id="p2_twenty"></a></li>
+                
+                <li><a href="#" class="chalk" id="p2_nineteen"></a></li>
+
+                <li><a href="#" class="chalk" id="p2_eighteen"></a></li>
+
+                <li><a href="#" class="chalk" id="p2_seventeen"></a></li>    
+
+                <li><a href="#" class="chalk" id="p2_sixteen"></a></li>
+
+                <li><a href="#" class="chalk" id="p2_fifteen"></a></li>
+
+                <li><a href="#" class="chalk" id="p2_bully"></a></li>
+
+            </ul>
+
+            <div class="scores">
+                    <div  id="player2-score" class="score">0</div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <footer>
+
+       <a href="https://www.sup.cool" id="sup_link" target="_blank"><img src="../assets/sup_tb.png" alt=""></a>
+
+    </footer>
+
+</body>
+
+<script src="../screeps/cricket.js" type="text/javascript"></script>
+
+
+</html>
