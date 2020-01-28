@@ -14,6 +14,8 @@ let feedbackWords = document.getElementById('feedback_words'),
 input.addEventListener('focus', function() {
     rectangle.style.opacity = '1';
     input.setAttribute('placeholder', '');
+
+    paperplane.style.transform = 'rotate(-14deg)';
     
     if (screen.width < 500) {
         footer.style.display = 'none';
@@ -24,6 +26,8 @@ input.addEventListener('focus', function() {
 input.addEventListener('blur', function() {
 
     input.setAttribute('placeholder', 'seriously, whatever you want...');
+
+    paperplane.style.transform = 'rotate(-20deg)';
 
     if (screen.width < 500) {
         footer.style.display = 'block';
