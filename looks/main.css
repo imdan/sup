@@ -52,15 +52,35 @@ p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* dude */
+/* home page */
 
 .dude {
     width: 125px;
     height: auto;
     display: block;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 70px;
+    margin-bottom: 70px;
     padding-right: 8px;
+}
+
+main a {
+    width: 125px;
+    height: 55px;
+    display: block;
+    margin: auto;
+    margin-bottom: 25px;
+    cursor: default;
+}
+
+.home_link {
+    width: 105px;
+    height: auto;
+    padding-left: 6px;
+}
+
+.home_link:hover {
+    transform: scale(1.1);
 }
 
 /* styles for HEADER NAV elements */
