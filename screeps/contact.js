@@ -46,8 +46,8 @@ input.addEventListener('keydown', function(e) {
     let code = (e.keyCode ? e.keyCode : e.which);
 
     if((code == 13) || (code == 10)) {
-        // input.blur();
-        input.innerText += "\n";
+        input.blur();
+        // input.innerText += "\n";
         return false;
     } else {
         return true;
