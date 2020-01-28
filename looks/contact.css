@@ -86,6 +86,12 @@ button:active {
     outline: none;
 }
 
+.nudge {
+    animation-name: nudge;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
 @media screen and (max-width: 325px) {
     #rectangle {
         width: 320px;
@@ -95,6 +101,27 @@ button:active {
         top: 250px;
         width: 250px;
     }
+}
 
+@keyframes nudge {
+    0% {
+        transform: translateX(0px) rotate(-20deg);
+    }
+
+    10% {
+        transform: translateX(4px) rotate(-20deg);
+    }
+
+    20% {
+        transform: translateX(0px) rotate(-20deg);
+    }
+
+    30% {
+        transform: translateX(4px) rotate(-20deg);
+    }
+
+    75% {
+        transform: translateX(0px) rotate(-20deg);
+    }
 
 }

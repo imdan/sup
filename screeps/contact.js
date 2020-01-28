@@ -15,7 +15,9 @@ input.addEventListener('focus', function() {
     rectangle.style.opacity = '1';
     input.setAttribute('placeholder', '');
 
-    paperplane.style.transform = 'rotate(-14deg)';
+    // paperplane.style.transform = 'rotate(-14deg)';
+
+    paperplane.classList.remove('nudge');
     
     if (screen.width < 500) {
         footer.style.display = 'none';
@@ -27,14 +29,20 @@ input.addEventListener('blur', function() {
 
     input.setAttribute('placeholder', 'seriously, whatever you want...');
 
-    paperplane.style.transform = 'rotate(-20deg)';
-
     if (screen.width < 500) {
         footer.style.display = 'block';
 
         setTimeout(function(){
             footer.style.opacity = '1';
         },150);
+    }
+
+    if (input.value !== '') {
+        paperplane.style.transform = 'rotate(-20deg)';
+
+        setTimeout(function() {
+            paperplane.classList.add('nudge');
+        }, 1500);
     }
 
     if (status === 'submitted') {
@@ -63,6 +71,7 @@ form.addEventListener('submit', function(e) {
 
     if (input.value != '') {
         status = 'submitted';
+        paperplane.classList.remove('nudge');
         feedbackWords.style.opacity = '0';
         paperplane.style.transform = 'translateX(50px)';
         paperplane.style.opacity = '0';
@@ -84,6 +93,7 @@ paperplane.addEventListener('click', function(e) {
 
     if (input.value != '') {
         status = 'submitted';
+        paperplane.classList.remove('nudge');
         feedbackWords.style.opacity = '0';
         paperplane.style.transform = 'translateX(50px)';
         paperplane.style.opacity = '0';
