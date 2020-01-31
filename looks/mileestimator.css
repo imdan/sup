@@ -1,0 +1,278 @@
+#dude_icon {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#exercise {
+    margin: 0;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: block;
+    margin: auto;
+    width: 350px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+    font-size: 18px;
+}
+
+select {
+    -webkit-appearance: none;
+    height: 35px;
+    /* border: 1px solid black; */
+    /* border-radius: 0px; */
+    border: none;
+    background-color: rgba(255,255,255,.0);
+    margin-right: 6px;
+    margin-left: 6px;
+    font-size: 14px;
+    z-index: 1;
+}
+
+select:focus {
+    outline: none;
+}
+
+#select-1 {
+    width: 85px;
+}
+
+#select-2 {
+    width: 150px;
+}
+
+.arrow {
+    position: absolute;
+    z-index: -1;
+}
+
+#arrow-1 {
+    margin-top: 9px;
+    margin-left: -16px;
+}
+
+#arrow-2 {
+    margin-top: 9px;
+    margin-left: -18px;
+}
+
+#length {
+    display: inline-block;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    padding: 4px;
+    padding-right: 12px;
+    text-align: center;
+}
+
+.length {
+    
+    width: 18px;
+    /* padding: 4px; */
+    margin-top: 4px;
+    font-size: 14px;
+    text-align: right;
+    border: none;
+    opacity: .75;
+   
+}
+
+.length::placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.length::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.length:focus {
+    outline: none;
+}
+
+.flash-red {
+    animation-name: flashred;
+    animation-duration: .6s;
+    animation-iteration-count: 1;
+}
+
+span { 
+    /* opacity: .5; */
+    font-size: 14px;
+}
+
+#buttons {
+    position: fixed;
+    bottom: 7vh;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100px;
+    margin: auto;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    width: 150px;
+    height: 50px;
+    border-radius: 0px;
+    border: 2px solid black;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    outline: none;
+}
+
+/* button:hover {
+    color: white;
+    background-color: black;
+} */
+
+button:active {
+    outline: none;
+}
+
+button:disabled {
+    color: black;
+}
+
+#start {
+    margin-right: 15px;
+}
+
+#start:active {
+    background-color: green;
+    color: white;
+}
+
+#stop:active {
+    background-color: red;
+    color: white;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+
+#miles {
+    margin-top: 5px;
+    font-size: 36px;
+}
+
+#numbers {
+    margin-top: 0px;
+    font-size: 46px;
+}
+
+.flash {
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+}
+
+#fineprint {
+     max-width: 275px;
+     margin: auto;
+}
+
+#fineprint p {
+    font-size: 8px;
+    margin-top: 5px;
+}
+
+#modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0, .4);
+}
+
+#modal {
+    box-sizing: border-box;
+    width: 250px;
+    height: 200px;
+    margin: 36vh auto;
+    background-color: white;
+    padding-top: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#modal h3 {
+    font-size: 24px;
+}
+
+.option {
+    margin: 0;
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 20px;
+    cursor: default;
+    /* margin-right: 15px; */
+}
+
+#no {
+    margin-left: 35px;
+}
+
+#vid {
+    bottom: 75px;
+    left: 50%;
+    opacity: 0;
+}
+
+@media screen and (max-width: 360px) {
+    #miles {
+        margin-top: 0px;
+        font-size: 26px;
+    }
+    
+    #numbers {
+        margin-top: 5px;
+        font-size: 36px;
+    }
+}
+
+@keyframes flashred {
+    0% { color: black; }
+    25% { color: red; }
+    50% { color: black }
+    75% { color: red; }
+    100% { color: black; }
+}
+
+@keyframes flash {
+    0% { opacity: 1; } 
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
