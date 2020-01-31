@@ -89,7 +89,6 @@ select:focus {
     text-align: right;
     border: none;
     opacity: .75;
-   
 }
 
 .length::placeholder {
@@ -103,6 +102,10 @@ select:focus {
 
 .length:focus {
     outline: none;
+}
+
+.length:disabled {
+    background-color: white;
 }
 
 .flash-red {
@@ -124,6 +127,9 @@ span {
     width: 100%;
     height: 100px;
     margin: auto;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 1s;
 }
 
 button {

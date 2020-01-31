@@ -7,6 +7,8 @@ let type_select = document.getElementById('select-1'),
     seconds = document.getElementById('seconds'),
     start = document.getElementById('start'),
     stop = document.getElementById('stop'),
+    buttons = document.getElementById('buttons'),
+    footer = document.querySelector('footer'),
     numbers = document.getElementById('numbers'),
     miles = document.getElementById('miles'),
     vid = document.getElementById('vid'),
@@ -24,8 +26,18 @@ hours.addEventListener('keydown', addTime);
 
 minutes.addEventListener('keydown', addTime);
 
-hours.addEventListener('blur', setTime);
-minutes.addEventListener('blur', setTime);
+hours.addEventListener('focus', hide);
+minutes.addEventListener('focus', hide);
+
+hours.addEventListener('blur', () => {
+    setTime();
+    show();   
+});
+
+minutes.addEventListener('blur', () => {
+    setTime();
+    show();
+});
 
 start.addEventListener('click', e => {
     e.preventDefault();
@@ -302,6 +314,29 @@ function disableForm() {
     type_select.setAttribute('disabled', 'true');
     minutes.setAttribute('disabled', 'true');
     hours.setAttribute('disabled', 'true');
+}
+
+// hide and show footer and buttons on mobile input
+
+function hide() {
+    if (screen.width < 500) {
+        footer.style.display = 'none';
+        buttons.style.display = 'none';
+        footer.style.opacity = '0';
+        buttons.style.opacity = '0';
+    }
+}
+
+function show() {
+    if (screen.width < 500) {
+        footer.style.display = 'block';
+        buttons.style.display = 'block';
+
+        setTimeout(function(){
+            footer.style.opacity = '1';
+            buttons.style.opacity = '1';
+        },150);
+    }
 }
 
 // stop timer function
