@@ -231,7 +231,7 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             stopCounter();
 
-            window.navigator.vibrate([500,100,500,100,500,100,500]);
+            window.navigator.vibrate([1000,200,1000,200,1000,200,1000,200,1000]);
 
             dude.setAttribute('src', '../assets/momentum.jpg');
             numbers.classList.add('flash');
@@ -281,7 +281,7 @@ function startStopwatch(startTime, duration, display) {
         if (++timer > duration*60) {
             stopCounter();
 
-            window.navigator.vibrate([500,100,500,100,500,100,500]);
+            window.navigator.vibrate([1000,200,1000,200,1000,200,1000,200,1000]);
 
             dude.setAttribute('src', '../assets/momentum.jpg');
             numbers.classList.add('flash');
