@@ -29,6 +29,11 @@ more.addEventListener('click', function() {
     } else {
         open = true;
 
+        circle.style.transitionDuration = '1s';
+        square.style.transitionDuration = '1s';
+        about.style.transitionDuration = '1s';
+        feedback.style.transitionDuration = '1s';
+
         square.style.opacity = '.5';
         about.style.opacity = '.5';
         
