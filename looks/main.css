@@ -64,6 +64,10 @@ p {
     padding-right: 8px;
 }
 
+main {
+    margin-top: 22vh;
+}
+
 main a {
     width: 125px;
     height: 55px;
