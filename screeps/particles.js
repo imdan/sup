@@ -10,7 +10,7 @@ function setup() {
         for(let i = 0; i < particlesLength; i++) {
             particles.push(new Particle());
         }
-    }, 1250);
+    }, 1450);
     
     
 }
