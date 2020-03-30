@@ -1,7 +1,7 @@
 let feedback = document.getElementById('paperplane_link'), 
     more = document.getElementById('more'),
-    circle = document.getElementById('circle'),
-    square = document.getElementById('square'),
+    nav_circle = document.getElementById('circle'),
+    nav_square = document.getElementById('square'),
     about = document.getElementById('about'),
     homeLink = document.getElementById('home_link'), 
     projectsLink = document.getElementById('projects_link'), 
@@ -14,10 +14,10 @@ let feedback = document.getElementById('paperplane_link'),
 more.addEventListener('click', function() {
     if(open === true) {
         feedback.style.opacity = '0';
-        circle.style.opacity = '0';
+        nav_circle.style.opacity = '0';
 
         setTimeout(function() {
-            square.style.opacity = '0';
+            nav_square.style.opacity = '0';
             about.style.opacity = '0';
         }, 500);
 
@@ -29,17 +29,17 @@ more.addEventListener('click', function() {
     } else {
         open = true;
 
-        circle.style.transitionDuration = '1s';
-        square.style.transitionDuration = '1s';
+        nav_circle.style.transitionDuration = '1s';
+        nav_square.style.transitionDuration = '1s';
         about.style.transitionDuration = '1s';
         feedback.style.transitionDuration = '1s';
 
-        square.style.opacity = '.5';
+        nav_square.style.opacity = '.5';
         about.style.opacity = '.5';
         
         setTimeout(function() {
             feedback.style.opacity = '.6';
-            circle.style.opacity = '.5';
+            nav_circle.style.opacity = '.5';
         }, 150);
 
         // more.style.opacity = '.4';
