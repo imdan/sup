@@ -68,14 +68,14 @@ p {
     padding-right: 8px;
 }
 
-main {
+#home-nav {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-main a {
+#home-nav a {
     width: 125px;
     height: 55px;
     display: block;
