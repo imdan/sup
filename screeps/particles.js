@@ -51,7 +51,7 @@ class Particle {
     // draw a single particle
     draw() {
         noStroke();
-        fill('rgba(0,0,0,.5)');
+        fill('rgba(0,0,0,.25)');
         circle(this.pos.x, this.pos.y, this.size);
     }
 

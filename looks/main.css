@@ -6,10 +6,6 @@ body {
     margin: 0 0;
 }
 
-canvas {
-    margin-top: -65px;
-}
-
 p {
     text-align: center;
     font-size: 18px;
@@ -18,9 +14,9 @@ p {
     opacity: 1;
     transition-property: opacity;
     transition-duration: 2.5s;
-    margin-top: 212px;   
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 0px;   
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
     margin-bottom: 10px;
 }
 
@@ -34,19 +30,21 @@ p {
 }
 
 #twitter {
-    opacity: 1;
+    opacity: .7;
 }
 
 #twitter:hover {
-    opacity: .75;
+    opacity: 1;
+    cursor: pointer;
 }
 
 #github {
-    opacity: 1;
+    opacity: .7;
 }
 
 #github:hover {
-    opacity: .75;
+    opacity: 1;
+    cursor: pointer;
 }
 
 .about-info {
@@ -58,149 +56,39 @@ p {
 
 /* home page */
 
-.dude {
-    width: 125px;
-    height: auto;
-    display: block;
-    margin: auto;
-    margin-top: 70px;
-    margin-bottom: 62px;
-    padding-right: 8px;
-}
-
-#home-nav {
+#home-main {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#home-nav a {
-    width: 125px;
-    height: 55px;
-    display: block;
-    margin: auto;
-    margin-bottom: 25px;
-    cursor: default;
-}
-
-.home_link {
-    width: 105px;
-    height: auto;
-    padding-left: 6px;
-}
-
-.home_link:hover {
-    transform: scale(1.1);
+    transform: translate(-50%, -64%);
 }
 
 /* styles for HEADER NAV elements */
 
-#more {
-    width: 28px;
-    height: auto;
-    display: block;
-    margin: auto;
-    margin-top: 38px;
-    opacity: .25;
-    z-index: 10;
+header div {
+    position: fixed;
+    width: 100%;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
-#more:hover {
-    transform: scale(1.1);
-    opacity: .2;
+.nav-link {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0px 10px;
+    opacity: .5;
 }
 
-#more:active {
-    opacity: .4;
+.nav-link:hover {
+    opacity: .75;
+    cursor: pointer;
 }
 
-#circle {
-    width: 20px;
-    height: auto;
-    display: inline-block;
-    opacity: 0;
-    transition-property: opacity;
-    /* transition-duration: 1s; */
+.current-page {
+    opacity: 1;
 }
-
-#home_link {
-    position: absolute;
-    top: 44px;
-    left: 15vw;
-    display: block;
-    width: 20px;
-    cursor: default;
-    /* background-color: blue; */
-
-}
-
-#square {
-    width: 20px;
-    height: auto;
-    display: inline-block;
-    opacity: 0;
-    transition-property: opacity;
-    /* transition-duration: 1s; */
-}
-
-#projects_link {
-    position: absolute;
-    top: 44px;
-    left: 32vw;
-    display: block;
-    width: 20px;
-    cursor: default;
-    /* background-color: green; */
-}
-
-#about {
-    width: 34px;
-    height: auto;
-    display: inline-block;
-    opacity: 0;
-    transition-property: opacity;
-    /* transition-duration: 1s; */
-}
-
-#about_link {
-    position: absolute;
-    top: 36px;
-    right: 33vw;
-    display: block;
-    width: 34px;
-    cursor: default;
-    /* background-color: purple; */
-}
-
-#paperplane_link {
-    width: 42px;
-    height: auto;
-    display: inline-block;
-    transform: rotate(-14deg);
-    opacity: 0;
-    transition-property: opacity;
-    /* transition-duration: 1s; */
-}
-
-#contact_link {
-    position: absolute;
-    top: 40px;
-    right: 15vw;
-    display: block;
-    width: 42px;
-    cursor: default;
-    /* background-color: orange; */
-}
-
-/* #paperplane_link:hover {
-    transform: rotate(-14deg) translateX(2px);
-    opacity: .2;
-}
-
-#paperplane_link:active {
-    opacity: .4;
-} */
 
 
 /* END of styles for header nav */
@@ -210,8 +98,8 @@ p {
 /* styles for PROJECT PAGE elements */
 
 #projects {
-    /* margin-top: 50px; */
-    height: 52vh;
+    margin-top: 85px;
+    height: 75vh;
     overflow: scroll;
     padding: 0;
     width: 250px;
@@ -303,7 +191,7 @@ footer {
     bottom: 0;
     margin-left: 0;
     text-align: center;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     opacity: 1;
     transition-property: opacity;
     transition-duration: 1s;
@@ -318,9 +206,8 @@ footer {
 }
 
 #sup {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     display: inline-block;
     /* margin: auto; */
-
 }

@@ -32,16 +32,17 @@
 
     <header>
 
-        <img src="assets/more.jpg" alt="more" id="more">
+        <div>
 
-        <a href="/" id="home_link"><img src="assets/circle.jpg" alt="circle" id="circle"></a>
-        <a href="projects.html" id="projects_link"><img src="assets/square.jpg" alt="square" id="square"></a>
-        <a href="about.html" id="about_link"><img src="assets/about.jpg" alt="about" id="about"></a>
-        <a href="contact.html" id="contact_link"><img src="assets/paperplane.jpg" alt="paperplane" id="paperplane_link"></a>
+            <a href="/" class="nav-link">home</a>
+            <a href="projects.html" class="nav-link current-page">projects</a>
+            <a href="contact.html" class="nav-link">contact</a>
 
+        </div>        
+    
     </header>
 
-    <p id="listen">(links to projects)</p>
+    <!-- <p id="listen" style="opacity:0">(links to projects)</p> -->
 
     <div id="projects">
 
@@ -56,9 +57,6 @@
         <a href='projects/wordfinder.html'><h2 class="projectlist">word finder</h2></a>
         <p class="info">words api/js/css/html/ps/ink</p>
 
-        <!-- <a href='projects/basicbootstrap.html' target="_blank"><h2 class="projectlist">basic bootstrap</h2></a>
-        <p class="info">html/css/bootstrap/js/gulp</p> removed this for now, was just a bootstrap theme, nothing special-->
-
         <a href='projects/keepup.html'><h2 class="projectlist">keep up</h2></a>
         <p class="info">js/css/html/ps/ink</p>
 
@@ -68,11 +66,7 @@
 
         <a href="projects/eatpoab.html" target="_blank"><h2 class="projectlist">eatpoab</h2></a>
         <p class="info">js/css/html</p>
-
-
-        <!-- <h2 class="projectlist" id="hello">hello world</h2> felt kinda stupid putting this up idk -->
        
-
 
         <div id="bottom-gradient"></div>
 
@@ -85,14 +79,13 @@
 
     </footer>
 
-    <script src="screeps/nav.js"></script>
-    <script>
+    <!-- <script>
         
         setTimeout(function() {
             listen.style.opacity = '0';
         }, 2500);
 
-    </script>
+    </script> -->
     <!-- <script src="screeps/helloworld.js"></script> -->
     
 </body>

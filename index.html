@@ -30,32 +30,36 @@
     <link rel="icon" type="image/png" href="assets/whitecircle_32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/whitecircle_16x16.png" sizes="16x16" />
 
+    <script src="https://kit.fontawesome.com/e4bfb220a1.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
     <header>
 
-        <img src="assets/more.jpg" alt="more" id="more">
+        <div>
 
-        <a href="/" id="home_link"><img src="assets/circle.jpg" alt="circle" id="circle"></a>
-        <a href="projects.html" id="projects_link"><img src="assets/square.jpg" alt="square" id="square"></a>
-        <a href="about.html" id="about_link"><img src="assets/about.jpg" alt="about" id="about"></a>
-        <a href="contact.html" id="contact_link"><img src="assets/paperplane.jpg" alt="paperplane"
-                id="paperplane_link"></a>
+            <a href="/" class="nav-link">home</a>
+            <a href="projects.html" class="nav-link">projects</a>
+            <a href="contact.html" class="nav-link">contact</a>
+
+        </div>        
 
     </header>
-    
-    <!-- <img src="assets/momentum.gif" alt="dude" class="dude" title="momentum" alt="man on exercise bike"> -->
 
-    <main id="home-nav">
+    <main id="home-main">
 
 
-        <a href="projects.html"><img src="assets/projects.png" alt="projects" class="home_link"></a>
+        <p>making stuff and <br> putting it on the internet</p>
+        <p class="about-info">web development/animation/doodling</p>
 
-        <a href="about.html"><img src="assets/about.png" alt="about" class="home_link"></a>
+        <div id="social">
 
-        <a href="contact.html"><img src="assets/contact.png" alt="contact" class="home_link"></a>
+            <a href="https://twitter.com/danmcguire_" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/imdan" target="_blank" id="github"><i class="fab fa-github"></i></a>
+
+        </div>
 
 
     </main>
@@ -70,7 +74,6 @@
     </footer>
 
     <script src="screeps/particles.js"></script>
-    <script src="screeps/nav.js"></script>
 
 </body>
 
