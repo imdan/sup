@@ -11,6 +11,14 @@ h1 {
     font-size: 12px;
 }
 
+#dictionary_icon {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    margin-bottom: 0px;
+}
+
 #wrap {
     text-align: center;
 }
@@ -37,7 +45,7 @@ input {
     position: absolute;
     margin-right: auto;
     margin-left: 33px;
-    top: 180px;
+    top: 290px;
     font-size: 16px;
     padding: 4px 4px;
     border: 0;
@@ -55,7 +63,7 @@ input {
 #button {
     display: block;
     margin: auto;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     width: 95px;
     height: 30px;
     border-radius: 0px;
@@ -72,7 +80,7 @@ input {
 
 section {
     width: 288px;
-    height: 42vh;
+    height: 32vh;
     margin: auto;
     text-align: left;
     overflow: scroll;

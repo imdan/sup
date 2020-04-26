@@ -1,0 +1,51 @@
+[
+    {
+        "name": "mile estimator",
+        "image": "./assets/momentum.jpg",
+        "url": "./projects/mileestimator.html",
+        "github": "https://github.com/imdan/sup",
+        "used": ["html", "css", "js", "ink", "psd"],
+        "desc": "timer/stopwatch with est. mileage"
+    },
+    {
+        "name": "cricket darts",
+        "image": "./assets/cricket.png",
+        "url": "./projects/cricket.html",
+        "github": "https://github.com/imdan/cricket",
+        "used": ["html", "css", "js", "ink", "psd"],
+        "desc": "darts scoreboard for cricket"
+    },
+    {
+        "name": "word finder",
+        "image": "./assets/words.png",
+        "url": "./projects/wordfinder.html",
+        "github": "https://github.com/imdan/sup",
+        "used": ["html", "css", "js", "words api"],
+        "desc": "a dictionary"
+    },
+    {
+        "name": "keep up",
+        "image": "./assets/smileyballooncolor2.jpg",
+        "url": "./projects/keepup.html",
+        "github": "https://github.com/imdan/sup",
+        "used": ["html", "css", "js", "ink", "psd"],
+        "desc": "keep up game"
+    },
+    {
+        "name": "list of things",
+        "image": "./assets/things.png",
+        "url": "./projects/lot.html",
+        "github": "https://github.com/imdan/thingslist",
+        "used": ["html", "css", "js", "materialize"],
+        "desc": "basic todo list"
+    },
+    {
+        "name": "eatpoab",
+        "image": "./assets/eatpoab.png",
+        "url": "./projects/eatpoab.html",
+        "github": "https://github.com/imdan/eatpoab",
+        "used": ["html", "css", "js"],
+        "desc": "a meditation game"
+    }
+
+]

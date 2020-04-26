@@ -27,6 +27,8 @@
     <link rel="icon" type="image/png" href="assets/whitecircle_32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="assets/whitecircle_16x16.png" sizes="16x16" />
 
+    <script src="https://kit.fontawesome.com/e4bfb220a1.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -37,41 +39,42 @@
             <a href="/" class="nav-link">home</a>
             <a href="projects.html" class="nav-link current-page">projects</a>
             <a href="contact.html" class="nav-link">contact</a>
+            <!-- <a href="#" class="nav-link">shop</a> -->
 
         </div>        
     
     </header>
 
-    <!-- <p id="listen" style="opacity:0">(links to projects)</p> -->
+    <div class="sub-head">
 
-    <div id="projects">
-
-        <div id="top-gradient"></div>
-
-        <a href='projects/mileestimator.html'><h2 class="projectlist" id="first">mile estimator</h2></a>
-        <p class="info">js/css/html/ps/ink</p>
-
-        <a href='projects/cricket.html' target="_blank"><h2 class="projectlist">cricket darts</h2></a>
-        <p class="info">js/sass/css/html/ps</p>
-
-        <a href='projects/wordfinder.html'><h2 class="projectlist">word finder</h2></a>
-        <p class="info">words api/js/css/html/ps/ink</p>
-
-        <a href='projects/keepup.html'><h2 class="projectlist">keep up</h2></a>
-        <p class="info">js/css/html/ps/ink</p>
-
-        <a href="projects/lot.html" target="_blank"><h2 class="projectlist">list of things</h2></a>
-        <p class="info">js/materialize/css/html</p>
-
-
-        <a href="projects/eatpoab.html" target="_blank"><h2 class="projectlist">eatpoab</h2></a>
-        <p class="info">js/css/html</p>
-       
-
-        <div id="bottom-gradient"></div>
+        <a href="#" class="nav-link sub-nav current-page" id="apps-link">apps</a>
+        <a href="#" class="nav-link sub-nav" id="anima-link">gifs</a>
 
     </div>
 
+    <div id="projects-scroll">
+
+        <div id="projects-container">
+
+            <div id="top-gradient"></div>
+
+            <div id="bottom-gradient"></div>
+
+        </div>
+
+    </div>
+
+    <div class="animation-card">
+
+            <img src="" alt="" tit id="gif">
+    
+            <p class="animation-title" id="title"></p>
+    
+            <i class="fas fa-long-arrow-alt-left" id="back"></i>
+    
+            <i class="fas fa-long-arrow-alt-right" id="forward"></i>
+    
+    </div>
 
     <footer>
 
@@ -79,14 +82,7 @@
 
     </footer>
 
-    <!-- <script>
-        
-        setTimeout(function() {
-            listen.style.opacity = '0';
-        }, 2500);
-
-    </script> -->
-    <!-- <script src="screeps/helloworld.js"></script> -->
+    <script src="screeps/projects.js"></script>
     
 </body>
 </html>
