@@ -130,19 +130,27 @@ function setCurrent(datas) {
                     <p class="description">${app.desc}</p>
             `;
 
+            // need to figure out how to prevent links from working before overlay is shown
+
             appCard.addEventListener('mouseover', (e) => {
-            // console.log(e.target.childNodes[1]);
-                if(e.target.childNodes[1] !== undefined && e.target.childNodes[1].classList.contains('project-overlay')) {
-                    let overlay = e.target.childNodes[1];
+                
+                let targetClass = e.target.classList;
+                
+                console.log(targetClass.value);
+
+                if(targetClass.contains('project-img') || targetClass.contains('project-title') || targetClass.contains('tech-used') || targetClass.contains('description') || targetClass.contains('project-card')) {
+                    let overlay = appCard.childNodes[1];
                     overlay.style.display = 'unset';
                 }
+                
             });
             
             
             appCard.addEventListener('mouseleave', (e) => {
-            // console.log(e.target.childNodes[1]);
-                if(e.target.childNodes[1] !== undefined && e.target.childNodes[1].classList.contains('project-overlay')) {
-                    let overlay = e.target.childNodes[1];
+                // console.log(e.target.classList);
+                let targetClass = e.target.classList;
+                if(targetClass.contains('project-card')) {
+                    let overlay = appCard.childNodes[1];
                     overlay.style.display = 'none';
                 }    
             });

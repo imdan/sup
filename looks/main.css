@@ -116,8 +116,11 @@ header div {
 }
 
 a {
+    display: inline-block;
     text-decoration: none;
     color: black;
+    margin-top: 105px;
+    margin-left: 58px;
 }
 
 a:visited {
@@ -178,7 +181,7 @@ h2 {
     transition-duration: 1s;
     margin: 16px 12px 34px 12px;
     /* padding-top: 25px; */
-    z-index: 10;
+    /* z-index: 10; */
 }
 
 .project-card:hover {
@@ -199,8 +202,6 @@ h2 {
     font-size: 36px;
     color: black;
     opacity: .6;
-    margin-top: 105px;
-    margin-left: 58px;
 }
 
 .icon:hover {
