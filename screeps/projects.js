@@ -1,15 +1,15 @@
-let back = document.getElementById('back'),
-    forward = document.getElementById('forward'),
-    gif = document.getElementById('gif'),
-    title = document.getElementById('title'),
-    gifs,
-    i = 1;
+// let back = document.getElementById('back'),
+//     forward = document.getElementById('forward'),
+//     gif = document.getElementById('gif'),
+//     title = document.getElementById('title'),
+//     gifs,
+//     i = 1;
 
 
 let projectCards = document.querySelectorAll('.project-card'),
-    animationCard = document.querySelector('.animation-card'),
+    // animationCard = document.querySelector('.animation-card'),
     appsLink = document.getElementById('apps-link'),
-    animaLink = document.getElementById('anima-link'),
+    // animaLink = document.getElementById('anima-link'),
     projectsContainer = document.getElementById('projects-container'),
     bottomGradient = document.getElementById('bottom-gradient'),
     apps;
@@ -18,57 +18,57 @@ let currentView = 'apps';
 
 window.addEventListener('DOMContentLoaded', () => {
     getApps(); 
-    getGifs();
+    // getGifs();
 });
 
 // console.log(projectCards);
 
 
-back.addEventListener('click', previousGif);
+// back.addEventListener('click', previousGif);
 
-forward.addEventListener('click', nextGif);
+// forward.addEventListener('click', nextGif);
 
-appsLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    appsLink.classList.add('current-page');
-    currentView = 'apps';
-    projectsContainer.style.display = 'flex';
-    animationCard.style.display = 'none';
-    // setCurrent(apps);
+// appsLink.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     appsLink.classList.add('current-page');
+//     currentView = 'apps';
+//     projectsContainer.style.display = 'flex';
+//     animationCard.style.display = 'none';
+//     // setCurrent(apps);
     
-    if(animaLink.classList.contains('current-page')) {
-        animaLink.classList.remove('current-page');
-    }
-});
+//     if(animaLink.classList.contains('current-page')) {
+//         animaLink.classList.remove('current-page');
+//     }
+// });
 
-animaLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    animaLink.classList.add('current-page');
-    currentView = 'animation';
-    projectsContainer.style.display = 'none';
-    animationCard.style.display = 'unset';
-    setCurrent(gifs);
+// animaLink.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     animaLink.classList.add('current-page');
+//     currentView = 'animation';
+//     projectsContainer.style.display = 'none';
+//     animationCard.style.display = 'unset';
+//     setCurrent(gifs);
 
-    if(appsLink.classList.contains('current-page')) {
-        appsLink.classList.remove('current-page');
-    }
-});
+//     if(appsLink.classList.contains('current-page')) {
+//         appsLink.classList.remove('current-page');
+//     }
+// });
 
-function getGifs() {
+// function getGifs() {
 
-    fetch('./data/animations.json')
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            // console.log(data);
-            gifs = data;
-            // setCurrent(gifs);
-        })
-        .catch((err) => {
-            console.error(`oh fuck, ${err}`);
-        });
-}
+//     fetch('./data/animations.json')
+//         .then((res) => {
+//             return res.json();
+//         })
+//         .then((data) => {
+//             // console.log(data);
+//             gifs = data;
+//             // setCurrent(gifs);
+//         })
+//         .catch((err) => {
+//             console.error(`oh fuck, ${err}`);
+//         });
+// }
 
 function getApps() {
     
@@ -86,25 +86,25 @@ function getApps() {
         });
 }
 
-function previousGif() {
-    if(i === 0) {
-        i = gifs.length - 1;
-        setCurrent(gifs);
-    } else {
-        i--;
-        setCurrent(gifs);
-    }
-}
+// function previousGif() {
+//     if(i === 0) {
+//         i = gifs.length - 1;
+//         setCurrent(gifs);
+//     } else {
+//         i--;
+//         setCurrent(gifs);
+//     }
+// }
 
-function nextGif() {
-    if(i === gifs.length - 1) {
-        i = 0;
-        setCurrent(gifs);
-    } else {
-        i++;
-        setCurrent(gifs);
-    }
-}
+// function nextGif() {
+//     if(i === gifs.length - 1) {
+//         i = 0;
+//         setCurrent(gifs);
+//     } else {
+//         i++;
+//         setCurrent(gifs);
+//     }
+// }
 
 function setCurrent(datas) {
 
@@ -159,12 +159,14 @@ function setCurrent(datas) {
                 
         });
 
-    } else {
-        gif.setAttribute('src', `${datas[i].url}`);
-        gif.setAttribute('alt', `${datas[i].title}`);
-        // gif.setAttribute('title', `${gifs[i].title}`);
-        title.innerHTML = datas[i].title;
-    }
+    } 
+    
+    // else {
+    //     gif.setAttribute('src', `${datas[i].url}`);
+    //     gif.setAttribute('alt', `${datas[i].title}`);
+    //     // gif.setAttribute('title', `${gifs[i].title}`);
+    //     title.innerHTML = datas[i].title;
+    // }
     
 }
 
