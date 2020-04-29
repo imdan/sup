@@ -1,5 +1,13 @@
 [
     {
+        "name": "node_weather",
+        "image": "./assets/node_weather_icon.png",
+        "url": "https://github.com/imdan/node_weather",
+        "github": "https://github.com/imdan/node_weather",
+        "used": ["js", "node", "axios", "cheerio"],
+        "desc": "gets current weather using node"
+    },
+    {
         "name": "mile estimator",
         "image": "./assets/momentum.jpg",
         "url": "./projects/mileestimator.html",
