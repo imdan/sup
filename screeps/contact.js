@@ -1,111 +1,178 @@
-let feedbackWords = document.getElementById('feedback_words'),
-    input = document.getElementById('input'),
-    rectangle = document.getElementById('rectangle'),
-    paperplane = document.getElementById('paperplane'), 
-    form = document.querySelector('form'),
-    button = document.querySelector('button'),
-    footer = document.querySelector('footer'),
-    status = '';
+let name = document.getElementById('name'),
+  nameLabel = document.getElementById('name-label'),
+  email = document.getElementById('email'),
+  emailLabel = document.getElementById('email-label'),
+  msg = document.getElementById('msg'),
+  form = document.getElementById('form');
 
-// setTimeout(function() {
-//     feedbackWords.style.opacity = '1';
-// }, 500);
+let placeholders = [
+  'seriously, whatever you want...',
+  'really though, just say hey, give some feedback, anything...',
+  'seriously? still nothing coming to mind? just smash your keyboard and hit send...',
+  'dude...just put some words in the box and push the button...',
+  'anything I could help with maybe? some kind of service I could possibly provide...',
+  "I'd love to help...",
+  '...gonna have to start this loop over soon...',
+  '......anything......'
+];
 
-input.addEventListener('focus', function() {
-    rectangle.style.opacity = '1';
-    input.setAttribute('placeholder', '');
+let alert = document.getElementById('alert'),
+  icon = document.getElementById('icon'),
+  alertMsg = document.getElementById('alert-msg');
 
-    // paperplane.style.transform = 'rotate(-14deg)';
+let i = 0;
 
-    paperplane.classList.remove('nudge');
-    
-    if (screen.width < 500) {
-        footer.style.display = 'none';
-        footer.style.opacity = '0';
-    }
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    alertSuccess();
+    localStorage.setItem('submitted', false);
+  }, 1500);
 });
 
-input.addEventListener('blur', function() {
+name.addEventListener('focus', () => addFocus('name'));
+name.addEventListener('blur', () => removeFocus('name'));
 
-    input.setAttribute('placeholder', 'seriously, whatever you want...');
+email.addEventListener('focus', () => addFocus('email'));
+email.addEventListener('blur', () => removeFocus('email'));
 
-    if (screen.width < 500) {
-        footer.style.display = 'block';
+msg.addEventListener('focus', () => addFocus('msg'));
+msg.addEventListener('blur', () => removeFocus('msg'));
 
-        setTimeout(function(){
-            footer.style.opacity = '1';
-        },150);
-    }
+form.addEventListener('submit', e => validateForm(e));
 
-    if (input.value !== '') {
-        paperplane.style.transform = 'rotate(-20deg)';
+function addFocus(which) {
+  if (which === 'name') {
+    nameLabel.style.opacity = '.75';
+    name.setAttribute('placeholder', '');
+  } else if (which === 'email') {
+    emailLabel.style.opacity = '.75';
+    email.setAttribute('placeholder', '');
+  } else if (which === 'msg') {
+    msg.setAttribute('placeholder', '');
+  }
+}
 
-        setTimeout(function() {
-            paperplane.classList.add('nudge');
-        }, 1500);
-    }
+function removeFocus(which) {
+  if (which === 'name') {
+    nameLabel.style.opacity = '.5';
+    name.setAttribute('placeholder', 'Johnny Doe');
+  } else if (which === 'email') {
+    emailLabel.style.opacity = '.5';
+    email.setAttribute('placeholder', 'johnnyd123@gmail.com');
+  } else if (which === 'msg') {
+    msg.setAttribute('placeholder', `${placeholders[i]}`);
+    i < placeholders.length - 1 ? i++ : (i = 0);
+  }
+}
 
-    if (status === 'submitted') {
-        rectangle.style.opacity = '0';
-    } else {
-        rectangle.style.opacity = '.4';
-    }
-});
+function validateName() {
+  const re = /^[a-zA-Z ]{2,20}$/;
 
-input.addEventListener('keydown', function(e) {
-    // disable go key on mobile
+  if (!re.test(name.value)) {
+    name.style.boxShadow = '0px 0px 4px rgba(255, 0, 0, 0.25)';
 
-    let code = (e.keyCode ? e.keyCode : e.which);
+    setTimeout(() => {
+      name.style.boxShadow = '0px 0px 4px rgba(0, 0, 0, 0.25)';
+    }, 3000);
+    return false;
+  } else {
+    return true;
+  }
+}
 
-    if((code == 13) || (code == 10)) {
-        input.blur();
-        // input.innerText += "\n";
-        return false;
-    } else {
-        return true;
-    }
-});
+function validateEmail() {
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
 
-form.addEventListener('submit', function(e) {
+  if (!re.test(email.value)) {
+    email.style.boxShadow = '0px 0px 4px rgba(255, 0, 0, 0.25)';
+
+    setTimeout(() => {
+      email.style.boxShadow = '0px 0px 4px rgba(0, 0, 0, 0.25)';
+    }, 3000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateMsg() {
+  if (msg.value.length < 2) {
+    msg.style.boxShadow = '0px 0px 4px rgba(255, 0, 0, 0.25)';
+
+    setTimeout(() => {
+      msg.style.boxShadow = '0px 0px 4px rgba(0, 0, 0, 0.25)';
+    }, 3000);
+    return false;
+  } else {
+    return true;
+  }
+}
+
+function validateForm(e) {
+  let validName = validateName(),
+    validEmail = validateEmail(),
+    validMsg = validateMsg();
+
+  if (!validName || !validEmail || !validMsg) {
     e.preventDefault();
+    alert.style.display = 'unset';
+    alert.classList.add('alert-err');
+    icon.classList.add('fa-exclamation-circle');
 
-    if (input.value != '') {
-        status = 'submitted';
-        paperplane.classList.remove('nudge');
-        feedbackWords.style.opacity = '0';
-        paperplane.style.transform = 'translateX(50px)';
-        paperplane.style.opacity = '0';
-        rectangle.style.opacity = '0';
-        input.style.opacity = '0';
-        // paperplane.setAttribute('disabled', 'disabled');
-        input.setAttribute('placeholder', '');
-        // input.setAttribute('disabled', 'disabled');
+    let output = [];
 
-        setTimeout(function(){
-            form.submit();
-        },2500);
+    if (!validName) output.push('name');
+    if (!validEmail) output.push('email');
+    if (!validMsg) output.push('message');
 
-        }
-});
+    // console.log(output);
 
-paperplane.addEventListener('click', function(e) {
-    e.preventDefault();
+    // idk about messaging, kinda want to change it       !!!!!!!!!!!!!!!!!
 
-    if (input.value != '') {
-        status = 'submitted';
-        paperplane.classList.remove('nudge');
-        feedbackWords.style.opacity = '0';
-        paperplane.style.transform = 'translateX(50px)';
-        paperplane.style.opacity = '0';
-        rectangle.style.opacity = '0';
-        input.style.opacity = '0';
-        // paperplane.setAttribute('disabled', 'disabled');
-        input.setAttribute('placeholder', '');
-        // input.setAttribute('disabled', 'disabled');
-
-        setTimeout(function(){
-            form.submit();
-        },2500);
+    if (output.length === 1) {
+      alertMsg.innerHTML = `that ${output[0]} won\'t work...`;
+    } else if (output.length > 1 && output.length < 3) {
+      let newOutput = output.join(' and ');
+      alertMsg.innerHTML = `that ${newOutput} won\'t work...`;
+    } else {
+      alertMsg.innerHTML = `you missed all three somehow...`;
     }
-});
 
+    setTimeout(() => {
+      alert.style.display = 'none';
+      alert.classList.remove('alert-err');
+      icon.classList.remove('fa-exclamation-circle');
+      output = [];
+      // console.log(output);
+    }, 3000);
+  } else {
+    // this preventDefault is preventing form submit         !!!!!!!!!!!!!!!
+    e.preventDefault();
+    localStorage.setItem('submitted', true);
+    let fullName = name.value.split(' ');
+    let firstName = fullName[0];
+    localStorage.setItem('localName', `${firstName}`);
+    return;
+  }
+}
+
+function alertSuccess() {
+  let submitted = localStorage.getItem('submitted'),
+    localName = localStorage.getItem('localName');
+
+  if (submitted !== 'false') {
+    alert.style.display = 'unset';
+    alert.classList.add('alert-success');
+    icon.classList.add('fa-check-circle');
+    alertMsg.innerHTML = `got it, thanks ${localName}`;
+
+    setTimeout(() => {
+      alert.style.display = 'none';
+      alert.classList.remove('alert-err');
+      icon.classList.remove('fa-exclamation-circle');
+      // console.log(output);
+    }, 3000);
+  } else {
+    return;
+  }
+}
