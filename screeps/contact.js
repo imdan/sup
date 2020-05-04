@@ -22,6 +22,8 @@ let alert = document.getElementById('alert'),
 
 let i = 0;
 
+let footer = document.querySelector('footer');
+
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     alertSuccess();
@@ -50,6 +52,11 @@ function addFocus(which) {
   } else if (which === 'msg') {
     msg.setAttribute('placeholder', '');
   }
+
+  if (screen.width < 500) {
+    footer.style.display = 'none';
+    footer.style.opacity = '0';
+  }
 }
 
 function removeFocus(which) {
@@ -62,6 +69,14 @@ function removeFocus(which) {
   } else if (which === 'msg') {
     msg.setAttribute('placeholder', `${placeholders[i]}`);
     i < placeholders.length - 1 ? i++ : (i = 0);
+  }
+
+  if (screen.width < 500) {
+    footer.style.display = 'block';
+
+    setTimeout(function() {
+      footer.style.opacity = '1';
+    }, 150);
   }
 }
 
@@ -127,8 +142,6 @@ function validateForm(e) {
 
     // console.log(output);
 
-    // idk about messaging, kinda want to change it       !!!!!!!!!!!!!!!!!
-
     if (output.length === 1) {
       alertMsg.innerHTML = `that ${output[0]} won\'t work...`;
     } else if (output.length > 1 && output.length < 3) {
@@ -146,8 +159,6 @@ function validateForm(e) {
       // console.log(output);
     }, 3000);
   } else {
-    // this preventDefault is preventing form submit         !!!!!!!!!!!!!!!
-    e.preventDefault();
     localStorage.setItem('submitted', true);
     let fullName = name.value.split(' ');
     let firstName = fullName[0];
@@ -160,7 +171,7 @@ function alertSuccess() {
   let submitted = localStorage.getItem('submitted'),
     localName = localStorage.getItem('localName');
 
-  if (submitted !== 'false') {
+  if (submitted !== 'false' && submitted != null) {
     alert.style.display = 'unset';
     alert.classList.add('alert-success');
     icon.classList.add('fa-check-circle');
