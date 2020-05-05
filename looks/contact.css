@@ -83,7 +83,7 @@
 
 #name-label {
   position: absolute;
-  top: 48px;
+  top: 48.5px;
   left: 34px;
   z-index: 10;
 }
@@ -95,7 +95,7 @@
 
 #email-label {
   position: absolute;
-  top: 100px;
+  top: 100.5px;
   left: 36px;
   z-index: 10;
 }
