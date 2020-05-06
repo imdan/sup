@@ -62,7 +62,7 @@ function addFocus(which) {
 function removeFocus(which) {
   if (which === 'name') {
     nameLabel.style.opacity = '.5';
-    name.setAttribute('placeholder', 'Firstname Lastname');
+    name.setAttribute('placeholder', 'First Last');
   } else if (which === 'email') {
     emailLabel.style.opacity = '.5';
     email.setAttribute('placeholder', 'email@gmail.com');
