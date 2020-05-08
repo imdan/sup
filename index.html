@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60737046-3"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-60737046-3"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
 
-        gtag('config', 'UA-60737046-3');
+      gtag('config', 'UA-60737046-3');
     </script>
 
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="robots" content="noindex,nofollow">
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="noindex,nofollow" />
 
     <title>sup.</title>
 
-    <link rel="stylesheet" href="looks/main.css">
+    <link rel="stylesheet" href="looks/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
 
-    <link rel="icon" type="image/png" href="assets/whitecircle_32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="assets/whitecircle_16x16.png" sizes="16x16" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/whitecircle_32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/whitecircle_16x16.png"
+      sizes="16x16"
+    />
 
-    <script src="https://kit.fontawesome.com/e4bfb220a1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e4bfb220a1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <header>
-
-        <div>
-
-            <a href="/" class="nav-link">home</a>
-            <a href="projects.html" class="nav-link">projects</a>
-            <a href="contact.html" class="nav-link">contact</a>
-
-        </div>        
-
+      <div>
+        <a href="/" class="nav-link">home</a>
+        <a href="projects.html" class="nav-link">projects</a>
+        <a href="contact.html" class="nav-link">contact</a>
+      </div>
     </header>
 
     <main id="home-main">
+      <p>
+        connecting dots
+      </p>
+      <p class="about-info">web development/animation/ecommerce</p>
 
-
-        <p>just making stuff and <br> putting it on the internet</p>
-        <p class="about-info">web development/animation/doodling</p>
-
-        <div id="social">
-
-            <a href="https://twitter.com/danmcguire_" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://github.com/imdan" target="_blank" id="github"><i class="fab fa-github"></i></a>
-
-        </div>
-
-
+      <div id="social">
+        <a href="https://twitter.com/danmcguire_" target="_blank" id="twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://github.com/imdan" target="_blank" id="github"
+          ><i class="fab fa-github"></i
+        ></a>
+      </div>
     </main>
 
-
     <footer>
-
-
-        <a href="https://www.sup.cool" id="home"><img src="assets/sup.gif" alt="sup." id="sup"></a>
-
-
+      <a href="https://www.sup.cool" id="home"
+        ><img src="assets/sup.gif" alt="sup." id="sup"
+      /></a>
     </footer>
 
     <script src="screeps/particles.js"></script>
     <script>
-        const sup = {
-            cool: true
-        }
+      const sup = {
+        cool: true,
+        builtBy: 'sup.',
+        builtWith: ['html', 'css', 'js', 'netlify'],
+        contact: 'dan@sup.cool'
+      };
+
+      console.log({ sup });
     </script>
-
-</body>
-
+  </body>
 </html>
