@@ -1,15 +1,8 @@
 [
-    {
-        "title": "status seeking",
-        "url": "./assets/seeking.gif",
-        "alt": "status seeking",
-        "created": "1/11/20"
-    },
-    {
-        "title": "stuck inside",
-        "url": "./assets/inside.gif",
-        "alt": "stuck inside",
-        "created": "4/12/20"
-    }
+  {
+    "title": "stuck inside",
+    "url": "./assets/inside.gif",
+    "alt": "stuck inside",
+    "created": "4/12/20"
+  }
 ]
-
