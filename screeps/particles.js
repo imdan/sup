@@ -6,7 +6,7 @@ function setup() {
   // const particlesLength = Math.floor(window.innerWidth / 45);
 
   window.setTimeout(() => {
-    const particlesLength = 11;
+    const particlesLength = window.innerWidth < 450 ? 8 : 12;
     for (let i = 0; i < particlesLength; i++) {
       particles.push(new Particle());
     }
