@@ -6,7 +6,7 @@ function setup() {
   // const particlesLength = Math.floor(window.innerWidth / 45);
 
   window.setTimeout(() => {
-    const particlesLength = 12;
+    const particlesLength = 11;
     for (let i = 0; i < particlesLength; i++) {
       particles.push(new Particle());
     }
@@ -37,7 +37,7 @@ class Particle {
     // velocity
     this.vel = createVector(random(-1, 1), random(-1, 1));
     // Size
-    this.size = 5;
+    this.size = 4;
   }
 
   // updates movement by adding velocity
