@@ -13,7 +13,7 @@
     "url": "https://github.com/imdan/node_weather",
     "github": "https://github.com/imdan/node_weather",
     "used": ["js", "node", "axios", "cheerio"],
-    "desc": "gets current weather using node"
+    "desc": " console logs current weather"
   },
   {
     "name": "mile estimator",
@@ -29,7 +29,7 @@
     "url": "./projects/cricket.html",
     "github": "https://github.com/imdan/cricket",
     "used": ["html", "css", "js", "ink", "psd"],
-    "desc": "darts scoreboard for cricket"
+    "desc": "cricket darts scoreboard"
   },
   {
     "name": "word finder",
