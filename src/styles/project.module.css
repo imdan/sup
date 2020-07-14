@@ -141,6 +141,7 @@
   bottom: 74px;
   left: 50%;
   transform: translateX(-50%);
+  width: 75%;
 }
 
 .description {

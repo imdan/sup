@@ -1,7 +1,7 @@
 .hideForm {
   transition-property: opacity;
   animation-name: hideForm;
-  animation-duration: 1.5s;
+  animation-duration: 1.75s;
   animation-iteration-count: 1;
 }
 
