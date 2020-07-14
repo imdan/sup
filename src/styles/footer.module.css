@@ -1,0 +1,28 @@
+.footer {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  margin-left: 0;
+  text-align: center;
+  /* padding-bottom: 10px; */
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+.home {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: auto;
+  cursor: default;
+}
+
+.sup {
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  margin: auto;
+}

@@ -1,0 +1,134 @@
+.hideForm {
+  transition-property: opacity;
+  animation-name: hideForm;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes hideForm {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.05;
+  }
+}
+
+.msg {
+  box-sizing: border-box;
+  position: absolute;
+  width: 294px;
+  height: 156px;
+  top: 142px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px 6px;
+  border: 0px;
+  font-size: 14px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  resize: none;
+}
+
+.msg::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  opacity: 0.25;
+}
+
+.msg::-webkit-scrollbar {
+  display: none;
+}
+
+/* .label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  opacity: 0.5;
+} */
+
+.nameLabel {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  opacity: 0.75;
+  position: absolute;
+  top: 44px;
+  left: 34px;
+  z-index: 10;
+}
+
+.name {
+  /* top: 40px; */
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.32);
+}
+
+.emailLabel {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  opacity: 0.75;
+  position: absolute;
+  top: 96px;
+  left: 34px;
+  z-index: 10;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 294px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  top: -4.5px;
+  z-index: -1;
+  margin-left: -6px;
+  border: none;
+  padding: 4px;
+  padding-left: 48px;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  opacity: 0.25;
+}
+
+.email {
+  /* top: 92px; */
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.32);
+}
+
+.button {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin: auto;
+  outline: none;
+  width: 75px;
+  height: 28px;
+  position: absolute;
+  top: 327px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0px;
+  background-color: white;
+  opacity: 0.5;
+  font-size: 13px;
+  padding-top: 0;
+}
+
+.button:hover {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+.button:focus {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+.button:active {
+  border: 1px solid black;
+  opacity: 0.75;
+}
