@@ -1,7 +1,8 @@
 import React, { useState } from "react"
+import Modal from "./projectModal"
 import projectStyles from "../styles/project.module.css"
 
-const Project = ({ app, loading }) => {
+const Project = ({ app }) => {
   const [showModal, setShowModal] = useState(false)
 
   const builtWith = app.builtWith.join(" / ")
@@ -14,38 +15,9 @@ const Project = ({ app, loading }) => {
     }
   }
 
-  if (loading) {
-    return (
-      <div className={projectStyles.loadingCard}>
-        <p className={projectStyles.loadingDot}>.</p>
-      </div>
-    )
-  }
-
   return (
     <div className={projectStyles.projectCard}>
-      {showModal && (
-        <div className={projectStyles.projectOverlay}>
-          <a
-            href={app.url}
-            className={projectStyles.extLink}
-            target="_blank"
-            rel="noreferrer"
-            alt="link to project"
-          >
-            <i className={`fas fa-external-link-alt ${projectStyles.icon}`}></i>
-          </a>
-          <a
-            href={app.github}
-            target="_blank"
-            className={projectStyles.githubLink}
-            rel="noreferrer"
-            alt="link to github"
-          >
-            <i className={`fab fa-github ${projectStyles.icon}`}></i>
-          </a>
-        </div>
-      )}
+      {showModal && <Modal app={app} />}
 
       <div>
         <img

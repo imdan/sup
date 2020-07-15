@@ -112,7 +112,7 @@ const Form = () => {
         name="contact"
         method="POST"
         action="/thanks/"
-        // className={formStyles.form}
+        className={formStyles.form}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         autoComplete="off"

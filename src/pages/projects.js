@@ -14,15 +14,14 @@ const ProjectPage = () => {
 
   useEffect(() => {
     setLoading(true)
+
     const url = "https://sup-cool.herokuapp.com/api/projects"
     axios
       .get(url)
-      .then(response => {
-        // console.log(response.data.data)
-        setProjects(response.data.data)
-        setTimeout(() => {
-          setLoading(false)
-        }, 750)
+      .then(res => {
+        // console.log(response.data.data) should prob fix that data.data
+        setProjects(res.data.data)
+        setLoading(false)
       })
       .catch(err => {
         console.error(err)
@@ -39,6 +38,24 @@ const ProjectPage = () => {
     )
   }
 
+  if (loading) {
+    return (
+      <Layout>
+        <SEO title="projects" />
+
+        <div className={projectsStyles.projectsScroll}>
+          <div className={projectsStyles.projectsContainer}>
+            <div className={projectsStyles.topGradient}></div>
+
+            <div className={projectsStyles.loader}></div>
+
+            <div className={projectsStyles.bottomGradient}></div>
+          </div>
+        </div>
+      </Layout>
+    )
+  }
+
   return (
     <Layout>
       <SEO title="projects" />
@@ -48,7 +65,7 @@ const ProjectPage = () => {
           <div className={projectsStyles.topGradient}></div>
 
           {projects.map(project => (
-            <Project key={project.id} app={project} loading={loading} />
+            <Project key={project.id} app={project} />
           ))}
 
           <div className={projectsStyles.bottomGradient}></div>

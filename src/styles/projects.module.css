@@ -61,3 +61,38 @@ h2 {
 .projectsContainer::-webkit-scrollbar {
   display: none;
 }
+
+.loader {
+  font-size: 30px;
+  opacity: 0.85;
+}
+
+.loader:after {
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 28vh;
+  vertical-align: bottom;
+  -webkit-animation: loader alternate 1.25s infinite;
+  animation: loader alternate 1.25s infinite;
+  animation-delay: 0.5s;
+  content: ".";
+  opacity: 0;
+}
+
+@keyframes loader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+@-webkit-keyframes loader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.85;
+  }
+}

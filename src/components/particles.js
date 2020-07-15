@@ -10,12 +10,10 @@ const Particles = () => {
     )
     // const particlesLength = Math.floor(window.innerWidth / 45);
 
-    window.setTimeout(() => {
-      const particlesLength = window.innerWidth < 450 ? 8 : 12
-      for (let i = 0; i < particlesLength; i++) {
-        particles.push(new Particle(p5))
-      }
-    }, 1450)
+    const particlesLength = window.innerWidth < 450 ? 8 : 12
+    for (let i = 0; i < particlesLength; i++) {
+      particles.push(new Particle(p5))
+    }
   }
 
   let draw = p5 => {

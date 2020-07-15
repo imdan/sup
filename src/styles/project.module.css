@@ -8,9 +8,8 @@
   transition-property: box-shadow;
   transition-duration: 1s;
   margin: 16px 12px 34px 12px;
-  animation-name: loadCard;
+  animation-name: fadeIn;
   animation-duration: 1s;
-  animation-direction: normal;
   animation-iteration-count: 1;
   /* padding-top: 25px;
   /* z-index: 10; */
@@ -23,6 +22,15 @@
 @media screen and (max-width: 450px) {
   .projectCard:hover {
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -51,47 +59,6 @@
 
 .button:hover {
   opacity: 0.5;
-}
-
-.loadingCard {
-  box-sizing: border-box;
-  position: relative;
-  /* border-radius: 5px; */
-  height: 250px;
-  width: 250px;
-  margin: 16px 12px 34px 12px;
-  padding-top: 85px;
-}
-
-.loadingDot {
-  font-size: 30px;
-  /* opacity: .25; */
-  transition-property: opacity;
-  animation-name: load;
-  animation-duration: 1s;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-}
-
-@keyframes loadCard {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes load {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 .icon {

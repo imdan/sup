@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import axios from "axios"
 
 import indexStyles from "../styles/index.module.css"
 
@@ -7,21 +8,36 @@ import SEO from "../components/seo"
 import Socials from "../components/socials"
 import Particles from "../components/particles"
 
-// logo reloads/animates twice (might be footer rerendering?), mobile form input is weird with logo and header, overall not bad really...
+// mobile form input is weird with logo and header, overall not bad really...
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="home" />
-    <Particles />
+const IndexPage = () => {
+  useEffect(() => {
+    const url = "https://sup-cool.herokuapp.com/"
+    // wake up heroku
+    axios
+      .get(url)
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [])
 
-    <main className={indexStyles.homeMain}>
-      <p>connecting dots and stuff</p>
-      <p className={indexStyles.aboutInfo}>
-        javascript / node / react / mongodb
-      </p>
-      <Socials />
-    </main>
-  </Layout>
-)
+  return (
+    <Layout>
+      <SEO title="home" />
+      <Particles />
+
+      <main className={indexStyles.homeMain}>
+        <p>connecting dots and stuff</p>
+        <p className={indexStyles.aboutInfo}>
+          javascript / node / react / mongodb
+        </p>
+        <Socials />
+      </main>
+    </Layout>
+  )
+}
 
 export default IndexPage
