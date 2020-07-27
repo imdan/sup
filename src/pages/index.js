@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import Socials from "../components/socials"
 import Particles from "../components/particles"
 
-// mobile form input is weird with logo and header, overall not bad really...
+// timing on hideForm still kinda weird on first submit (or only submit for anyone besides me...), I think it's the css animation
 
 const IndexPage = () => {
   useEffect(() => {

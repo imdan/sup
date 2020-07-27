@@ -10,7 +10,7 @@ function encode(data) {
     .join("&")
 }
 
-const Form = () => {
+const Form = ({ setFocus }) => {
   const [showAlert, setShowAlert] = useState(false)
   const [alert, setAlert] = useState({})
   const [error, setError] = useState(null)
@@ -99,7 +99,7 @@ const Form = () => {
           form.setAttribute("class", `${formStyles.hideForm}`)
           setTimeout(() => {
             navigate(form.getAttribute("action"))
-          }, 1250)
+          }, 1000)
         })
         .catch(error => alert(error))
     }
@@ -132,10 +132,14 @@ const Form = () => {
               type="text"
               name="name"
               onChange={handleChange}
-              onBlur={validateName}
               className={`${formStyles.input} ${formStyles.name}`}
               placeholder="First Last"
               autoComplete="off"
+              onFocus={setFocus}
+              onBlur={e => {
+                validateName(e)
+                setFocus()
+              }}
             />
           </label>
         </p>
@@ -147,10 +151,14 @@ const Form = () => {
               type="email"
               name="email"
               onChange={handleChange}
-              onBlur={validateEmail}
               className={`${formStyles.input} ${formStyles.email}`}
               placeholder="email@gmail.com"
               autoComplete="off"
+              onFocus={setFocus}
+              onBlur={e => {
+                validateEmail(e)
+                setFocus()
+              }}
             />
           </label>
         </p>
@@ -160,10 +168,14 @@ const Form = () => {
             type="text"
             name="message"
             onChange={handleChange}
-            onBlur={validateMessage}
             className={formStyles.msg}
             placeholder="constructive criticism, inquisitive inquiry, disapproval, random string of characters, whatever you want really..."
             autoComplete="off"
+            onFocus={setFocus}
+            onBlur={e => {
+              validateMessage(e)
+              setFocus()
+            }}
           ></textarea>
         </p>
 

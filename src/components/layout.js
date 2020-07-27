@@ -14,7 +14,7 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hasFocus }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -33,10 +33,15 @@ const Layout = ({ children }) => {
           crossorigin="anonymous"
         ></script>
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <div className={hasFocus ? "hide" : "show"}>
+        <Header siteTitle={data.site.siteMetadata.title} />
+      </div>
 
       <main>{children}</main>
-      <Footer />
+
+      <div className={hasFocus ? "hide" : "show"}>
+        <Footer />
+      </div>
     </>
   )
 }
