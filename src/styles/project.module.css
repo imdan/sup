@@ -1,13 +1,14 @@
 .projectCard {
   box-sizing: border-box;
   position: relative;
-  /* border-radius: 5px; */
+  border-radius: 4px;
   height: 250px;
   width: 250px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff; */
   transition-property: box-shadow;
   transition-duration: 1s;
-  margin: 16px 12px 34px 12px;
+  margin: 36px 12px 12px 12px;
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-iteration-count: 1;
@@ -16,21 +17,24 @@
 }
 
 .projectCard:hover {
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); */
+  box-shadow: 14px 14px 28px #d9d9d9, -14px -14px 28px #ffffff;
 }
 
 @media screen and (max-width: 450px) {
   .projectCard:hover {
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    /* box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff; */
   }
   to {
     opacity: 1;
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25); */
   }
 }
 

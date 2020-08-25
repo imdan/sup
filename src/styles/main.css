@@ -1,3 +1,7 @@
+/* html {
+  filter: sepia(25%);
+} */
+
 body {
   background: white;
   overflow-x: hidden;
@@ -19,6 +23,45 @@ p {
   /* margin-left: 50px; */
   /* margin-right: 50px; */
   margin-bottom: 0rem;
+}
+
+.node {
+  position: absolute;
+  /* bottom: 66px; */
+  left: 12px;
+  text-align: center;
+  cursor: default;
+  font-size: 28px;
+  opacity: 0.2;
+  background-color: white;
+  padding: 0;
+  width: 25px;
+  height: 15px;
+  z-index: 10;
+  border: none;
+  outline: none;
+  animation-name: drift;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(34px, 34px);
+  }
+  50% {
+    transform: translate(0px, 68px);
+  }
+  75% {
+    transform: translate(-34px, 34px);
+  }
+  100% {
+    transform: translate(0px 0px);
+  }
 }
 
 /* i {

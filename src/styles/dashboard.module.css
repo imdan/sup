@@ -1,0 +1,173 @@
+.container {
+  display: block;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 66vh;
+  font-size: 12px;
+  /* position: relative; */
+  /* padding-top: 18px; */
+  /* margin-top: 26px; */
+  margin-bottom: 32px;
+  overflow-y: scroll;
+}
+
+.topGradient {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  /* margin-bottom: 10px; */
+  z-index: 10;
+}
+
+.bottomGradient {
+  position: sticky;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  z-index: 10;
+}
+
+.container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.logout {
+  display: block;
+  width: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.project {
+  box-sizing: border-box;
+  display: block;
+  /* border: 1px solid black; */
+  border-left: 2px solid #ffffff;
+  width: 85%;
+  margin: auto;
+  padding: 18px;
+  background: #ffffff;
+  /* box-shadow: 8px 8px 16px #d9d9d9, -8px -8px 16px #ffffff; */
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  transition-property: box-shadow;
+  transition-duration: 1s;
+  border-radius: 4px;
+  font-size: 12px;
+  text-align: left;
+  position: relative;
+  margin-top: 32px;
+  animation-name: drop;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  overflow: hidden;
+}
+
+@keyframes rise {
+  0% {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+  }
+}
+
+@keyframes drop {
+  0% {
+    box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+  }
+  100% {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* .project:hover {
+  box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+} */
+
+.edit {
+  box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+  /* border-left: 2px solid rgba(240, 255, 0, 0.95); */
+  /* border-left: 2px solid rgba(0, 128, 0, 0.75); */
+  border-left: 2px solid rgba(255, 165, 0, 0.75);
+  animation-name: rise;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.new {
+  box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+  border-left: 2px solid rgba(0, 0, 255, 0.75);
+  animation-name: rise;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+/* .check {
+  color: rgba(240, 255, 0, 0.95);
+  color: black;
+  color: rgba(255, 165, 0, 0.75);
+} */
+
+.check:hover {
+  color: green;
+}
+
+.pen:hover {
+  color: orange;
+}
+
+.save:hover {
+  color: blue;
+}
+
+.trash:hover {
+  color: red;
+}
+
+.x:hover {
+  color: black;
+}
+
+.input {
+  border: none;
+  width: 80%;
+  outline: none;
+  padding: 0px;
+}
+
+.addProject {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* margin-top: 26px; */
+  outline: none;
+  opacity: 0.75;
+}
+
+.addProject:hover {
+  opacity: 1;
+}
+
+.controls {
+  position: absolute;
+  display: block;
+  top: 16px;
+  right: 16px;
+  font-size: 16px;
+}
+
+.control {
+  opacity: 0.5;
+  outline: none;
+}
+
+.control:hover {
+  opacity: 0.95;
+}

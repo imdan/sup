@@ -1,6 +1,6 @@
 import React from "react"
 
-const Error = () => (
+const Error = ({ message }) => (
   <>
     <p style={{ marginTop: "42vh" }}>
       uh oh...something broke...

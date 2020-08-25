@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react"
-import axios from "axios"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Project from "../components/project"
 import Error from "../components/projectError"
 import projectsStyles from "../styles/projects.module.css"
+import projectService from "../services/projects"
 
 const ProjectPage = () => {
   const [projects, setProjects] = useState([])
@@ -13,20 +12,22 @@ const ProjectPage = () => {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    setLoading(true)
+    const getProjects = async () => {
+      setLoading(true)
 
-    const url = "https://sup-cool.herokuapp.com/api/projects"
-    axios
-      .get(url)
-      .then(res => {
-        // console.log(response.data.data) should prob fix that data.data
-        setProjects(res.data.data)
+      try {
+        const response = await projectService.getAll()
+        const projects = response.data
+        projects.reverse()
+        setProjects(projects)
         setLoading(false)
-      })
-      .catch(err => {
-        console.error(err)
+      } catch (exception) {
+        console.error(exception)
         setError(true)
-      })
+      }
+    }
+
+    getProjects()
   }, [])
 
   if (error) {

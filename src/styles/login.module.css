@@ -1,0 +1,103 @@
+.form {
+  z-index: 10;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+.hideForm {
+  transition-property: opacity;
+  animation-name: hideForm;
+  animation-delay: 0.75s;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes hideForm {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.05;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 350px;
+  height: 250px;
+  transition-property: box-shadow;
+  transition-duration: 1s;
+}
+
+.input {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  width: 294px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -4.5px;
+  z-index: -1;
+  /* margin-left: -6px; */
+  border: none;
+  padding: 4px;
+  /* padding-left: 48px; */
+  font-size: 14px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.32);
+}
+
+.input::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  opacity: 0.25;
+}
+
+.button {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  margin: auto;
+  outline: none;
+  width: 75px;
+  height: 28px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0px;
+  background-color: white;
+  opacity: 0.5;
+  font-size: 13px;
+  padding-top: 0;
+}
+
+.button:hover {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+.button:focus {
+  border: 1px solid black;
+  opacity: 1;
+}
+
+.button:active {
+  border: 1px solid black;
+  opacity: 0.75;
+}
