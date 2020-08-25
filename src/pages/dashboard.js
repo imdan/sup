@@ -141,7 +141,7 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <Layout>
+      <Layout hasFocus={hasFocus}>
         <SEO title="dashboard" />
 
         <div className={projectsStyles.projectsScroll}>

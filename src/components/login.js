@@ -43,6 +43,7 @@ const Login = ({ setCurrentUser, setFocus }) => {
       })
       setShowAlert(true)
       form.setAttribute("class", `${loginStyles.hideForm}`)
+      setFocus()
 
       setTimeout(() => {
         setShowAlert(false)

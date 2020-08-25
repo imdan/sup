@@ -88,7 +88,7 @@ const Particles = () => {
     )
   }
 
-  return null
+  return <div></div>
 }
 
 export default Particles
