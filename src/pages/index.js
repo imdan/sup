@@ -56,9 +56,7 @@ const IndexPage = () => {
 
       <main className={indexStyles.homeMain}>
         <p>connecting dots and stuff</p>
-        <p className={indexStyles.aboutInfo}>
-          javascript / react / node / etc.
-        </p>
+        <p className={indexStyles.aboutInfo}>code / words / stuff / ...</p>
         <Socials />
       </main>
     </Layout>

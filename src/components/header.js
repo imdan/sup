@@ -22,7 +22,14 @@ const Header = () => {
             className={headerStyles.navLink}
             activeClassName={headerStyles.active}
           >
-            projects
+            work
+          </Link>
+          <Link
+            to="/log"
+            className={headerStyles.navLink}
+            activeClassName={headerStyles.active}
+          >
+            log
           </Link>
           <Link
             to="/contact/"

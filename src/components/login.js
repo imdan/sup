@@ -43,6 +43,7 @@ const Login = ({ setCurrentUser, setFocus }) => {
       })
       setShowAlert(true)
       form.setAttribute("class", `${loginStyles.hideForm}`)
+      // maybe add form.blur() here, might not need setFocus then, and will hide keyboard on mobile submit
       setFocus()
 
       setTimeout(() => {
