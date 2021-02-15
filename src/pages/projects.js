@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
+// import { navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Project from "../components/project"
 import Error from "../components/projectError"
+import Scrollable from "../components/scrollable"
 import projectsStyles from "../styles/projects.module.css"
 import projectService from "../services/projects"
 
@@ -10,6 +12,7 @@ const ProjectPage = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  // const [delay, setDelay] = useState(true)
 
   useEffect(() => {
     const getProjects = async () => {
@@ -30,6 +33,10 @@ const ProjectPage = () => {
     getProjects()
   }, [])
 
+  // setTimeout(() => {
+  //   setDelay(false)
+  // }, 1000)
+
   if (error) {
     return (
       <Layout>
@@ -44,15 +51,9 @@ const ProjectPage = () => {
       <Layout>
         <SEO title="projects" />
 
-        <div className={projectsStyles.projectsScroll}>
-          <div className={projectsStyles.projectsContainer}>
-            <div className={projectsStyles.topGradient}></div>
-
-            <div className={projectsStyles.loader}></div>
-
-            <div className={projectsStyles.bottomGradient}></div>
-          </div>
-        </div>
+        <Scrollable>
+          <div className={projectsStyles.loader}></div>
+        </Scrollable>
       </Layout>
     )
   }
@@ -61,17 +62,22 @@ const ProjectPage = () => {
     <Layout>
       <SEO title="projects" />
 
-      <div className={projectsStyles.projectsScroll}>
-        <div className={projectsStyles.projectsContainer}>
-          <div className={projectsStyles.topGradient}></div>
-
+      <Scrollable>
+        <>
           {projects.map(project => (
             <Project key={project.id} app={project} />
           ))}
-
-          <div className={projectsStyles.bottomGradient}></div>
-        </div>
-      </div>
+        </>
+        {/* {!delay && (
+          <button
+            className={`button`}
+            style={{ position: "relative", marginTop: "40px" }}
+            onClick={() => navigate("/log/")}
+          >
+            keep going
+          </button>
+        )} */}
+      </Scrollable>
     </Layout>
   )
 }

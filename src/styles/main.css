@@ -3,7 +3,8 @@
 } */
 
 body {
-  background: white;
+  /* background: white; */
+  /* background: rgba(40, 40, 40, 1); */
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 0 0;
@@ -25,42 +26,85 @@ p {
   margin-bottom: 0rem;
 }
 
-.node {
+.button {
+  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
-  /* bottom: 66px; */
-  left: 12px;
-  text-align: center;
-  cursor: default;
-  font-size: 28px;
-  opacity: 0.2;
-  background-color: white;
-  padding: 0;
-  width: 25px;
-  height: 15px;
-  z-index: 10;
+  width: 92px;
+  height: 36px;
+  /* border: 1.5px solid black; */
   border: none;
-  outline: none;
-  animation-name: drift;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  border-radius: 2px;
+  outline: 0px;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  margin-top: 8px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.25s;
 }
 
-@keyframes drift {
-  0% {
-    transform: translate(0px, 0px);
+.button:hover {
+  box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 500px) {
+  .button:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   }
-  25% {
-    transform: translate(34px, 34px);
+}
+
+.button:active {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  transform: scale(0.98);
+}
+
+.buttonDark {
+  background-color: rgba(51, 255, 51, 0.75);
+  box-shadow: 0px 0px 12px rgba(51, 255, 51, 0.5);
+  animation-name: flicker;
+  animation-duration: 1s;
+  animation-delay: 0.75s;
+  animation-iteration-count: 1;
+}
+
+.buttonDark:hover {
+  box-shadow: 0px 2px 14px rgba(51, 255, 51, 0.5);
+}
+
+@keyframes flicker {
+  0% {
+    box-shadow: 0px 0px 8px rgba(51, 255, 51, 0.5);
+    background-color: rgba(51, 255, 51, 0.75);
+  }
+  2% {
+    box-shadow: 0px 0px 0px rgba(40, 40, 40, 0.5);
+    background-color: rgba(40, 40, 40, 0.05);
+    color: rgb(40, 40, 40);
+  }
+  32% {
+    box-shadow: 0px 0px 0px rgba(40, 40, 40, 0.5);
+    background-color: rgba(40, 40, 40, 0.05);
+    color: rgb(40, 40, 40);
+  }
+  40% {
+    box-shadow: 0px 0px 12px rgba(51, 255, 51, 0.5);
+    background-color: rgba(51, 255, 51, 0.75);
+    color: white;
+    opacity: 1;
+  }
+  42% {
+    box-shadow: 0px 0px 0px rgba(40, 40, 40, 0.5);
+    background-color: rgba(40, 40, 40, 0.05);
+    color: rgb(40, 40, 40);
   }
   50% {
-    transform: translate(0px, 68px);
-  }
-  75% {
-    transform: translate(-34px, 34px);
+    box-shadow: 0px 0px 8px rgba(51, 255, 51, 0.5);
+    background-color: rgba(51, 255, 51, 0.75);
+    color: white;
   }
   100% {
-    transform: translate(0px 0px);
+    box-shadow: 0px 0px 12px rgba(51, 255, 51, 0.5);
+    background-color: rgba(51, 255, 51, 0.75);
   }
 }
 

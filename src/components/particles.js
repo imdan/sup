@@ -1,9 +1,11 @@
-const React = require("react")
+// const React = require("react")
+import React, { useContext } from "react"
+import ModeContext from "../context/ModeContext"
 const Sketch = typeof window !== `undefined` ? require("react-p5") : null
 
+let particles = []
 const Particles = () => {
-  let particles = []
-
+  const { dark } = useContext(ModeContext)
   let setup = (p5, canvasParentRef) => {
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
       canvasParentRef
@@ -11,18 +13,24 @@ const Particles = () => {
     // const particlesLength = Math.floor(window.innerWidth / 45);
 
     const particlesLength = window.innerWidth < 450 ? 8 : 12
-    for (let i = 0; i < particlesLength; i++) {
-      particles.push(new Particle(p5))
+    if (particles.length === 0) {
+      for (let i = 0; i < particlesLength; i++) {
+        particles.push(new Particle(p5))
+      }
     }
   }
 
   let draw = p5 => {
-    p5.background(255, 255, 255)
+    if (!dark) {
+      p5.background(255, 255, 255)
+    } else {
+      p5.background(40, 40, 40)
+    }
 
     particles.forEach((p, index) => {
       p.update(p5)
-      p.draw(p5)
-      p.checkParticles(particles.slice(index), p5)
+      p.draw(p5, dark)
+      p.checkParticles(particles.slice(index), p5, dark)
     })
   }
 
@@ -43,9 +51,14 @@ const Particles = () => {
     }
 
     // draw a single particle
-    draw(p5) {
+    draw(p5, dark) {
       p5.noStroke()
-      p5.fill("rgba(0,0,0,.11)")
+
+      if (!dark) {
+        p5.fill("rgba(0,0,0,.11)")
+      } else {
+        p5.fill("rgba(51,255,51,.25)")
+      }
       p5.circle(this.pos.x, this.pos.y, this.size)
     }
 
@@ -63,7 +76,7 @@ const Particles = () => {
     }
 
     // Connect particles
-    checkParticles(particles, p5) {
+    checkParticles(particles, p5, dark) {
       particles.forEach(particle => {
         const d = p5.dist(
           this.pos.x,
@@ -73,7 +86,11 @@ const Particles = () => {
         )
 
         if (d < 200) {
-          p5.stroke("rgba(0,0,0,0.05)")
+          if (!dark) {
+            p5.stroke("rgba(0,0,0,0.05)")
+          } else {
+            p5.stroke("rgba(51,255,51,.25)")
+          }
           p5.line(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y)
         }
       })

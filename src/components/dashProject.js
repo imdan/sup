@@ -1,10 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import ModeContext from "../context/ModeContext"
 import dashStyles from "../styles/dashboard.module.css"
 import EditProject from "../components/editProject"
 
 const DashProject = ({ project, edit, destroy }) => {
   const [editProject, setEditProject] = useState(false)
   const [sendToTrash, setSendToTrash] = useState(false)
+
+  const { dark } = useContext(ModeContext)
 
   // useEffect(() => {
   //   setThisProject(project)
@@ -36,7 +39,11 @@ const DashProject = ({ project, edit, destroy }) => {
   return (
     <>
       <div
-        className={dashStyles.project}
+        className={
+          dark
+            ? `${dashStyles.project} ${dashStyles.dark}`
+            : `${dashStyles.project}`
+        }
         style={sendToTrash ? { borderLeft: "2px solid red" } : {}}
       >
         <h4 style={{ marginBottom: "5px" }}> {project.title}</h4>

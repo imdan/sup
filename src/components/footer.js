@@ -1,11 +1,11 @@
 import React from "react"
 import footerStyles from "../styles/footer.module.css"
 
-const Footer = () => (
+import Socials from "./socials.js"
+
+const Footer = ({ dark }) => (
   <footer className={footerStyles.footer}>
-    <a href="https://sup.cool" className={footerStyles.home}>
-      <img src="/sup_tb.png" alt="sup." className={footerStyles.sup} />
-    </a>
+    <Socials dark={dark} />
   </footer>
 )
 

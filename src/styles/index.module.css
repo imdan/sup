@@ -8,15 +8,39 @@
 /* home page */
 
 .homeMain {
+  color: black;
   position: fixed;
   width: 100%;
-  top: 50%;
+  top: 43%;
   left: 50%;
-  transform: translate(-50%, -64%);
+  transform: translate(-50%, -50%);
   animation-name: fadeIn;
   animation-duration: 1.5s;
   animation-iteration-count: 1;
 }
+
+.dark {
+  color: white;
+}
+
+.explore {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.explore:active {
+  transform: translateX(-50%);
+}
+
+/* .square {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+} */
 
 @keyframes fadeIn {
   from {

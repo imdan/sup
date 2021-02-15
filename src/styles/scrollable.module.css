@@ -1,0 +1,76 @@
+.topGradient {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  z-index: 4;
+}
+
+.topDark {
+  background: linear-gradient(rgba(40, 40, 40, 1), rgba(40, 40, 40, 0));
+}
+
+.bottomGradient {
+  position: sticky;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  z-index: 4;
+}
+
+.bottomGradient::-webkit-scrollbar {
+  display: none;
+}
+
+.bottomDark {
+  background: linear-gradient(rgba(40, 40, 40, 0), rgba(40, 40, 40, 1));
+}
+
+.scrollable {
+  /* display: flex; */
+  position: absolute;
+  width: 100vw;
+  height: 70vh;
+  top: 104px;
+  overflow: scroll;
+  scrollbar-width: none;
+  z-index: 4;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 675px;
+  height: 72vh;
+  /* overflow: scroll; */
+  padding: 0;
+  /* margin-top: 125px; */
+  margin-left: auto;
+  margin-right: auto;
+  scrollbar-width: none;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff; */
+  }
+  to {
+    opacity: 1;
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25); */
+  }
+}

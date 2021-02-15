@@ -1,15 +1,18 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import { navigate } from "gatsby"
 import indexStyles from "../styles/index.module.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Socials from "../components/socials"
+// import Socials from "../components/socials"
 import Particles from "../components/particles"
 import projectService from "../services/projects"
+import ModeContext from "../context/ModeContext"
 
 // timing on hideForm still kinda weird on first submit (or only submit for anyone besides me...), I think it's the css animation
 
 const IndexPage = () => {
+  const { dark } = useContext(ModeContext)
+
   useEffect(() => {
     const wakeHeroku = async () => {
       try {
@@ -23,41 +26,40 @@ const IndexPage = () => {
     wakeHeroku()
   }, [])
 
-  const revealLogin = () => {
-    navigate("/dashboard/")
+  const explore = () => {
+    setTimeout(() => {
+      navigate("/log/")
+    }, 500)
   }
 
   return (
     <Layout>
       <SEO title="home" />
-      <Particles />
+      <Particles dark={dark} />
 
-      <div
-        style={{
-          position: "absolute",
-          width: "50px",
-          height: "50px",
-          left: "50%",
-          bottom: "39px",
-          transform: "translateX(-50%)",
-          zIndex: "10",
-        }}
+      <main
+        className={
+          dark
+            ? `${indexStyles.homeMain} ${indexStyles.dark}`
+            : `${indexStyles.homeMain}`
+        }
       >
-        <div
-          className="node"
-          onClick={revealLogin}
-          onKeyDown={revealLogin}
-          role="button"
-          tabIndex={0}
+        {/* <div className={indexStyles.square}></div> */}
+        <p style={{ fontSize: "20px" }}>connecting dots and stuff</p>
+        <p className={indexStyles.aboutInfo}>
+          structure / focus / consistency / ...
+        </p>
+        {/* <Socials /> */}
+        <button
+          className={
+            !dark
+              ? `button ${indexStyles.explore}`
+              : `button buttonDark ${indexStyles.explore}`
+          }
+          onClick={explore}
         >
-          .
-        </div>
-      </div>
-
-      <main className={indexStyles.homeMain}>
-        <p>connecting dots and stuff</p>
-        <p className={indexStyles.aboutInfo}>code / words / stuff / ...</p>
-        <Socials />
+          read on
+        </button>
       </main>
     </Layout>
   )

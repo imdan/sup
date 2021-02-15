@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
+import ModeContext from "../context/ModeContext"
 import dashStyles from "../styles/dashboard.module.css"
 import projectService from "../services/projects"
 
@@ -19,6 +20,8 @@ const EditProject = ({
     github: "",
     image: "",
   })
+
+  const { dark } = useContext(ModeContext)
 
   useEffect(() => {
     if (!thisProject.title) {
@@ -60,6 +63,7 @@ const EditProject = ({
         //   boxShadow: "10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff",
         //   borderLeft: "2px solid rgba(240,255,0,.95)",
         // }}
+        style={dark ? { backgroundColor: "rgb(40,40,40" } : {}}
       >
         <h4 style={{ marginBottom: "5px" }}>
           {" "}
@@ -72,9 +76,16 @@ const EditProject = ({
             onFocus={setFocus}
             onBlur={setFocus}
             className={dashStyles.input}
-            style={{
-              opacity: ".75",
-            }}
+            style={
+              dark
+                ? {
+                    opacity: ".75",
+                    color: "white",
+                  }
+                : {
+                    opacity: ".75",
+                  }
+            }
           />
         </h4>
         {/* maybe get rid of these strong tags and just add a class... */}
@@ -88,9 +99,16 @@ const EditProject = ({
           onFocus={setFocus}
           onBlur={setFocus}
           className={dashStyles.input}
-          style={{
-            opacity: ".75",
-          }}
+          style={
+            dark
+              ? {
+                  opacity: ".75",
+                  color: "white",
+                }
+              : {
+                  opacity: ".75",
+                }
+          }
         />
         <br />
         <strong>builtWith:</strong>{" "}
@@ -103,9 +121,16 @@ const EditProject = ({
           onFocus={setFocus}
           onBlur={setFocus}
           className={dashStyles.input}
-          style={{
-            opacity: ".75",
-          }}
+          style={
+            dark
+              ? {
+                  opacity: ".75",
+                  color: "white",
+                }
+              : {
+                  opacity: ".75",
+                }
+          }
         />
         <br />
         <strong>url:</strong>{" "}
@@ -118,9 +143,16 @@ const EditProject = ({
           onFocus={setFocus}
           onBlur={setFocus}
           className={dashStyles.input}
-          style={{
-            opacity: ".75",
-          }}
+          style={
+            dark
+              ? {
+                  opacity: ".75",
+                  color: "white",
+                }
+              : {
+                  opacity: ".75",
+                }
+          }
         />
         <br />
         <strong>github:</strong>{" "}
@@ -133,9 +165,16 @@ const EditProject = ({
           onFocus={setFocus}
           onBlur={setFocus}
           className={dashStyles.input}
-          style={{
-            opacity: ".75",
-          }}
+          style={
+            dark
+              ? {
+                  opacity: ".75",
+                  color: "white",
+                }
+              : {
+                  opacity: ".75",
+                }
+          }
         />
         <br />
         <strong>image:</strong>{" "}
@@ -148,9 +187,16 @@ const EditProject = ({
           onFocus={setFocus}
           onBlur={setFocus}
           className={dashStyles.input}
-          style={{
-            opacity: ".75",
-          }}
+          style={
+            dark
+              ? {
+                  opacity: ".75",
+                  color: "white",
+                }
+              : {
+                  opacity: ".75",
+                }
+          }
         />
         <div className={dashStyles.controls}>
           {/* could probably create components for these */}

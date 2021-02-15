@@ -12,24 +12,6 @@
   overflow-y: scroll;
 }
 
-.topGradient {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-  /* margin-bottom: 10px; */
-  z-index: 10;
-}
-
-.bottomGradient {
-  position: sticky;
-  bottom: 0;
-  height: 50px;
-  width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-  z-index: 10;
-}
-
 .container::-webkit-scrollbar {
   width: 0px;
 }
@@ -46,6 +28,7 @@
 }
 
 .project {
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   display: block;
   /* border: 1px solid black; */
@@ -63,9 +46,9 @@
   text-align: left;
   position: relative;
   margin-top: 32px;
-  animation-name: drop;
+  /* animation-name: drop;
   animation-duration: 1s;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; */
   overflow: hidden;
 }
 
@@ -92,21 +75,21 @@
 } */
 
 .edit {
-  box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+  /* box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff; */
   /* border-left: 2px solid rgba(240, 255, 0, 0.95); */
   /* border-left: 2px solid rgba(0, 128, 0, 0.75); */
   border-left: 2px solid rgba(255, 165, 0, 0.75);
-  animation-name: rise;
+  /* animation-name: rise;
   animation-duration: 1s;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; */
 }
 
 .new {
-  box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff;
+  /* box-shadow: 10px 10px 20px #d9d9d9, -10px -10px 20px #ffffff; */
   border-left: 2px solid rgba(0, 0, 255, 0.75);
-  animation-name: rise;
+  /* animation-name: rise;
   animation-duration: 1s;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; */
 }
 
 /* .check {
@@ -140,11 +123,13 @@
   width: 80%;
   outline: none;
   padding: 0px;
+  background: transparent;
 }
 
 .addProject {
   position: absolute;
   left: 50%;
+  bottom: 12%;
   transform: translateX(-50%);
   /* margin-top: 26px; */
   outline: none;
@@ -170,4 +155,9 @@
 
 .control:hover {
   opacity: 0.95;
+}
+
+.dark {
+  background-color: rgb(40, 40, 40);
+  border-left: 1px solid rgb(51, 255, 51);
 }

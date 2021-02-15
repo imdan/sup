@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-
+import React, { useState, useContext } from "react"
+import ModeContext from "../context/ModeContext"
 import Alert from "./alert"
 import loginStyles from "../styles/login.module.css"
 import projectService from "../services/projects"
@@ -10,6 +10,8 @@ const Login = ({ setCurrentUser, setFocus }) => {
   const [password, setPassword] = useState("")
   const [showAlert, setShowAlert] = useState(false)
   const [alert, setAlert] = useState({})
+
+  const { dark } = useContext(ModeContext)
 
   //  make this a component and import into dashboard page to show if not logged in
 
@@ -96,7 +98,15 @@ const Login = ({ setCurrentUser, setFocus }) => {
           onFocus={setFocus}
           onBlur={setFocus}
         />
-        <button className={loginStyles.button}>log in</button>
+        <button
+          className={
+            !dark
+              ? `button ${loginStyles.login}`
+              : `button buttonDark ${loginStyles.login}`
+          }
+        >
+          log in
+        </button>
       </form>
     </div>
   )

@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { navigate } from "gatsby-link"
-
+import ModeContext from "../context/ModeContext"
 import Alert from "../components/alert"
 import formStyles from "../styles/form.module.css"
 
@@ -16,6 +16,8 @@ const Form = ({ setFocus }) => {
   const [error, setError] = useState(null)
   const [data, setData] = useState({})
 
+  const { dark } = useContext(ModeContext)
+
   const handleChange = e => {
     setData({ ...data, [e.target.name]: e.target.value })
   }
@@ -25,10 +27,16 @@ const Form = ({ setFocus }) => {
 
     if (!re.test(e.target.value)) {
       setError({ ...error, [e.target.name]: true })
-      e.target.style.boxShadow = "0px 0px 4px rgba(255, 0, 0, 0.5)"
+      if (dark) {
+        e.target.style.border = "solid 1px red"
+      } else {
+        e.target.style.boxShadow = "0px 0px 4px rgba(255, 0, 0, 0.5)"
+        e.target.style.border = "none"
+      }
     } else {
       setError({ ...error, [e.target.name]: false })
       e.target.style.boxShadow = "0px 0px 4px rgba(0, 0, 0, 0.25)"
+      e.target.style.border = "none"
     }
   }
 
@@ -37,20 +45,32 @@ const Form = ({ setFocus }) => {
 
     if (!re.test(e.target.value)) {
       setError({ ...error, [e.target.name]: true })
-      e.target.style.boxShadow = "0px 0px 4px rgba(255, 0, 0, 0.5)"
+      if (dark) {
+        e.target.style.border = "solid 1px red"
+      } else {
+        e.target.style.boxShadow = "0px 0px 4px rgba(255, 0, 0, 0.5)"
+        e.target.style.border = "none"
+      }
     } else {
       setError({ ...error, [e.target.name]: false })
       e.target.style.boxShadow = "0px 0px 4px rgba(0, 0, 0, 0.25)"
+      e.target.style.border = "none"
     }
   }
 
   const validateMessage = e => {
     if (e.target.value.length < 2) {
       setError({ ...error, [e.target.name]: true })
-      e.target.style.boxShadow = "0px 0px 4px rgba(255, 0, 0, 0.25)"
+      if (dark) {
+        e.target.style.border = "solid 1px red"
+      } else {
+        e.target.style.boxShadow = "0px 0px 4px rgba(255, 0, 0, 0.5)"
+        e.target.style.border = "none"
+      }
     } else {
       setError({ ...error, [e.target.name]: false })
       e.target.style.boxShadow = "0px 0px 4px rgba(0, 0, 0, 0.25)"
+      e.target.style.border = "none"
     }
   }
 
@@ -126,7 +146,12 @@ const Form = ({ setFocus }) => {
           </label>
         </p>
         <p>
-          <label className={formStyles.nameLabel} htmlFor="name" id="name">
+          <label
+            className={formStyles.nameLabel}
+            style={dark ? { color: "rgb(40,40,04)" } : {}}
+            htmlFor="name"
+            id="name"
+          >
             name:
             <input
               type="text"
@@ -145,7 +170,12 @@ const Form = ({ setFocus }) => {
         </p>
 
         <p>
-          <label className={formStyles.emailLabel} htmlFor="email" id="email">
+          <label
+            className={formStyles.emailLabel}
+            style={dark ? { color: "rgb(40,40,04)" } : {}}
+            htmlFor="email"
+            id="email"
+          >
             email:
             <input
               type="email"
@@ -169,7 +199,7 @@ const Form = ({ setFocus }) => {
             name="message"
             onChange={handleChange}
             className={formStyles.msg}
-            placeholder="constructive criticism, inquisitive inquiry, disapproval, random string of characters, whatever you want really..."
+            placeholder="hey..."
             autoComplete="off"
             onFocus={setFocus}
             onBlur={e => {
@@ -179,8 +209,16 @@ const Form = ({ setFocus }) => {
           ></textarea>
         </p>
 
-        <button type="submit" name="submit" className={formStyles.button}>
-          send
+        <button
+          type="submit"
+          name="submit"
+          className={
+            !dark
+              ? `button ${formStyles.hey}`
+              : `button buttonDark ${formStyles.hey}`
+          }
+        >
+          say hey
         </button>
       </form>
     </>

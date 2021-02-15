@@ -1,14 +1,21 @@
 import React from "react"
 import socialStyles from "../styles/socials.module.css"
 
-const Socials = () => {
+const Socials = ({ dark }) => {
   return (
-    <div className={socialStyles.social}>
+    <div
+      className={
+        dark
+          ? `${socialStyles.social} ${socialStyles.dark}`
+          : socialStyles.social
+      }
+    >
       <a
         href="https://twitter.com/danmcguire_"
         target="_blank"
         rel="noreferrer"
         id="twitter"
+        // style={{ marginLeft: "15px" }}
       >
         <i className="fab fa-twitter" style={{ marginLeft: 0 }}></i>
       </a>

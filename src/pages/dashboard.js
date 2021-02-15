@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Login from "../components/login"
 import SEO from "../components/seo"
 import Error from "../components/projectError"
+import Scrollable from "../components/scrollable"
 import DashProject from "../components/dashProject"
 import EditProject from "../components/editProject"
 import projectsStyles from "../styles/projects.module.css"
@@ -169,28 +170,28 @@ const Dashboard = () => {
         </span>
       </p>
 
-      <div className={dashStyles.container}>
-        <div className={dashStyles.topGradient}></div>
-        {createNewProject && (
-          <EditProject
-            project={newProject}
-            isNew={true}
-            hideNew={hideNew}
-            save={save}
-            destroy={destroy}
-            setFocus={setFocus}
-          />
-        )}
-        {projects.map(project => (
-          <DashProject
-            project={project}
-            key={project.id}
-            edit={edit}
-            destroy={destroy}
-          />
-        ))}
-        <div className={dashStyles.bottomGradient}></div>
-      </div>
+      <Scrollable>
+        <>
+          {createNewProject && (
+            <EditProject
+              project={newProject}
+              isNew={true}
+              hideNew={hideNew}
+              save={save}
+              destroy={destroy}
+              setFocus={setFocus}
+            />
+          )}
+          {projects.map(project => (
+            <DashProject
+              project={project}
+              key={project.id}
+              edit={edit}
+              destroy={destroy}
+            />
+          ))}
+        </>
+      </Scrollable>
 
       <i
         className={`fas fa-plus ${dashStyles.addProject}`}

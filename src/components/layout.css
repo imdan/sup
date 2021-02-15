@@ -209,6 +209,7 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+
 img {
   max-width: 100%;
   margin-left: 0;
@@ -619,4 +620,53 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.light {
+  position: absolute;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+.dark {
+  position: absolute;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.toggle {
+  position: absolute;
+  bottom: 75px;
+  right: 34px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: rgb(40, 40, 40);
+  color: rgb(51, 255, 51);
+  /* color: black; */
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  opacity: 0.95;
+  z-index: 100;
+}
+
+.toggleDark {
+  position: absolute;
+  bottom: 75px;
+  right: 34px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: white;
+  /* color: rgb(51,255,51); */
+  color: black;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  opacity: 0.95;
+  z-index: 100;
 }

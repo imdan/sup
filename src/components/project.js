@@ -1,9 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import Modal from "./projectModal"
 import projectStyles from "../styles/project.module.css"
+import ModeContext from "../context/ModeContext"
 
 const Project = ({ app }) => {
   const [showModal, setShowModal] = useState(false)
+
+  const { dark } = useContext(ModeContext)
 
   const builtWith = app.builtWith.join(" / ")
 
@@ -16,7 +19,13 @@ const Project = ({ app }) => {
   }
 
   return (
-    <div className={projectStyles.projectCard}>
+    <div
+      className={
+        dark
+          ? `${projectStyles.projectCard} ${projectStyles.cardDark}`
+          : projectStyles.projectCard
+      }
+    >
       {showModal && <Modal app={app} />}
 
       <div>
@@ -30,13 +39,15 @@ const Project = ({ app }) => {
         <p className={projectStyles.description}>{app.desc}</p>
         <button
           className={projectStyles.button}
+          style={dark ? { color: "white" } : {}}
           onClick={toggleTheModal}
           aria-label="Show Links"
         >
           {showModal ? (
             <i className="far fa-times-circle"></i>
           ) : (
-            <i className="fas fa-link"></i>
+            // <i className="fas fa-link"></i>
+            <i className="fas fa-info-circle"></i>
           )}
         </button>
       </div>

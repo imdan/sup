@@ -60,6 +60,7 @@
   /* padding-left: 48px; */
   font-size: 14px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.32);
+  opacity: 0.75;
 }
 
 .input::placeholder {
@@ -68,7 +69,14 @@
   opacity: 0.25;
 }
 
-.button {
+.login {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 65%;
+  animation: none;
+}
+
+/* .button {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
@@ -100,4 +108,4 @@
 .button:active {
   border: 1px solid black;
   opacity: 0.75;
-}
+} */

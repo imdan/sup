@@ -35,7 +35,7 @@
   border-radius: 2px;
   position: absolute;
   width: 294px;
-  height: 156px;
+  height: 136px;
   top: 142px;
   left: 50%;
   transform: translateX(-50%);
@@ -45,16 +45,28 @@
   font-size: 14px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   resize: none;
+  opacity: 0.75;
 }
 
 .msg::placeholder {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  opacity: 0.25;
+  opacity: 1;
 }
 
 .msg::-webkit-scrollbar {
   display: none;
+}
+
+.hey {
+  top: 76%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: none;
+}
+
+.hey:active {
+  transform: translateX(-50%);
 }
 
 /* .label {
@@ -115,39 +127,4 @@
 .email {
   /* top: 92px; */
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.32);
-}
-
-.button {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  display: block;
-  margin: auto;
-  outline: none;
-  width: 75px;
-  height: 28px;
-  position: absolute;
-  top: 327px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 0px;
-  background-color: white;
-  opacity: 0.5;
-  font-size: 13px;
-  padding-top: 0;
-}
-
-.button:hover {
-  border: 1px solid black;
-  border-radius: 2px;
-  opacity: 1;
-}
-
-.button:focus {
-  border: 1px solid black;
-  opacity: 1;
-}
-
-.button:active {
-  border: 1px solid black;
-  opacity: 0.75;
 }
