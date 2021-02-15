@@ -13,14 +13,16 @@ const MobileNav = ({ show, hide, setHideNav, setShowNav }) => {
   }
 
   const guide = e => {
-    e.preventDefault()
+    // flashes white while in dark mode, might get rid of navigate() and see what normal link does with hide/cover thing
 
-    const link = e.target.href
+    // e.preventDefault()
+
+    // const link = e.target.href
     setHideNav(true)
     setCover(true)
-    setTimeout(() => {
-      navigate(link)
-    }, 275)
+    // setTimeout(() => {
+    //   navigate(link)
+    // }, 275)
   }
 
   return (

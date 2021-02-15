@@ -28,7 +28,7 @@ const IndexPage = () => {
 
   const explore = () => {
     setTimeout(() => {
-      navigate("/log/")
+      navigate("/contact/")
     }, 500)
   }
 
@@ -58,7 +58,7 @@ const IndexPage = () => {
           }
           onClick={explore}
         >
-          read on
+          contact
         </button>
       </main>
     </Layout>
