@@ -76,6 +76,10 @@
   animation: none;
 }
 
+.login:active {
+  transform: translateX(-50%) scale(0.98);
+}
+
 /* .button {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;

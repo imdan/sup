@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react"
 import ModeContext from "../context/ModeContext"
 import Alert from "./alert"
 import loginStyles from "../styles/login.module.css"
-import projectService from "../services/projects"
 import loginService from "../services/login"
 
 const Login = ({ setCurrentUser, setFocus }) => {
@@ -54,7 +53,6 @@ const Login = ({ setCurrentUser, setFocus }) => {
         if (window !== "undefinec") {
           window.localStorage.setItem("loggedInUser", JSON.stringify(user))
         }
-        projectService.setToken(user.token)
         setUsername("")
         setPassword("")
         setCurrentUser(user)

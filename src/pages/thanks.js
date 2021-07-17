@@ -11,7 +11,7 @@ const ThanksPage = () => (
     <Particles />
 
     <main className={thanksStyles.main}>
-      <p>cool, talk soon...</p>
+      <p style={{ textAlign: "center" }}>cool, talk soon...</p>
     </main>
   </Layout>
 )

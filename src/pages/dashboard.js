@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Layout from "../components/layout"
 import Login from "../components/login"
 import SEO from "../components/seo"
 import Error from "../components/projectError"
-import Scrollable from "../components/scrollable"
-import DashProject from "../components/dashProject"
-import EditProject from "../components/editProject"
-import projectsStyles from "../styles/projects.module.css"
-import projectService from "../services/projects"
+// import Scrollable from "../components/scrollable"
 import dashStyles from "../styles/dashboard.module.css"
+import workService from "../services/work"
+import { updateSettings } from "../services/settings"
+import SettingsContext from "../context/SettingsContext"
+import ModeContext from "../context/ModeContext"
 
 const Dashboard = () => {
+  const { settings, getSettings } = useContext(SettingsContext)
   const [hasFocus, setHasFocus] = useState(false)
-  const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
   const [user, setUser] = useState(null)
-  const [createNewProject, setCreateNewProject] = useState(false)
-  const [newProject, setNewProject] = useState({})
-
-  // clean everything up where possible, weird issue with token not being set....maybe tests...maybe
+  const [listItem, setListItem] = useState("")
+  const [selectedProjects, setSelectedProjects] = useState([])
+  const { dark } = useContext(ModeContext)
 
   useEffect(() => {
     if (window !== "undefined") {
@@ -27,22 +26,21 @@ const Dashboard = () => {
 
       if (loggedInUser) {
         const user = JSON.parse(loggedInUser)
-
-        projectService.setToken(user.token)
         setUser(user)
       }
     }
   }, [])
 
   useEffect(() => {
+    getSettings()
+
     const getProjects = async () => {
       setLoading(true)
 
       try {
-        const response = await projectService.getAll()
-        const projects = response.data
-        projects.reverse()
-        setProjects(projects)
+        const currentList = await workService.getList()
+        setSelectedProjects(currentList)
+
         setLoading(false)
       } catch (exception) {
         console.error(exception)
@@ -51,7 +49,7 @@ const Dashboard = () => {
     }
 
     getProjects()
-  }, [])
+  }, []) //eslint-disable-line
 
   const setFocus = () => {
     setHasFocus(!hasFocus)
@@ -66,62 +64,64 @@ const Dashboard = () => {
     if (window !== "undefined") {
       window.localStorage.clear()
     }
-    // navigate("/")
   }
 
-  const addNew = () => {
-    console.log("add new project")
-    const newProject = {
-      title: "new_project",
-      desc: "something new",
-      builtWith: [],
-      url: "https://www.",
-      github: "https://www.github.com/",
-      image: "/",
-    }
-
-    setNewProject(newProject)
-    setCreateNewProject(true)
-  }
-
-  const hideNew = () => {
-    setCreateNewProject(false)
-    setNewProject({})
-  }
-
-  const save = async () => {
-    const newProject = await projectService.create()
-    const newArray = [...projects]
-    newArray.unshift(newProject)
-    console.log(newArray)
-
-    setProjects(newArray)
-    setCreateNewProject(false)
-    setNewProject({})
-  }
-
-  const edit = async project => {
-    console.log(`edit ${project.title}`)
-    const projIdArr = projects.map(project => project.id)
-    const index = projIdArr.indexOf(project.id)
-    const newArr = [...projects]
-
-    const updatedProject = await projectService.update()
-    newArr[index] = updatedProject
-
-    setProjects(newArr)
-  }
-
-  const destroy = projectToDelete => {
-    console.log(`destroy ${projectToDelete.title}`)
-    projectService.remove(projectToDelete.id)
-    const newArray = projects.filter(
-      project => project.id !== projectToDelete.id
+  const updateProfilePicSetting = async () => {
+    await updateSettings(
+      {
+        settings: {
+          showProfilePic: !settings.showProfilePic,
+          showCTA: settings.showCTA,
+          id: settings.id,
+        },
+      },
+      user.token
     )
-
-    setProjects(newArray)
+    getSettings()
   }
 
+  const updateCTASetting = async () => {
+    await updateSettings(
+      {
+        settings: {
+          showProfilePic: settings.showProfilePic,
+          showCTA: !settings.showCTA,
+          id: settings.id,
+        },
+      },
+      user.token
+    )
+    getSettings()
+  }
+
+  const addListItem = async () => {
+    const { work } = await workService.getAll()
+    const repos = work.data.map(r => r.name)
+
+    if (repos.includes(listItem) && !selectedProjects.includes(listItem)) {
+      const newList = selectedProjects.map(i => i)
+      newList.push(listItem)
+      console.log(newList)
+      await workService.updateProjectList({ list: newList }, user.token)
+      setSelectedProjects(newList)
+      setListItem("")
+    }
+  }
+
+  const removeListItem = async () => {
+    const { work } = await workService.getAll()
+    const repos = work.data.map(r => r.name)
+
+    if (repos.includes(listItem) && selectedProjects.includes(listItem)) {
+      const newList = selectedProjects.map(i => i)
+      const filteredList = newList.filter(i => i !== listItem)
+      await workService.updateProjectList({ list: filteredList }, user.token)
+      setSelectedProjects(filteredList)
+      setListItem("")
+    }
+  }
+
+  // show login if no user
   if (!user) {
     return (
       <Layout hasFocus={hasFocus}>
@@ -131,6 +131,7 @@ const Dashboard = () => {
     )
   }
 
+  // show error if error
   if (error) {
     return (
       <Layout>
@@ -140,16 +141,13 @@ const Dashboard = () => {
     )
   }
 
+  // show loading... if projects not loaded yet
   if (loading) {
     return (
       <Layout hasFocus={hasFocus}>
         <SEO title="dashboard" />
 
-        <div className={projectsStyles.projectsScroll}>
-          <div className={projectsStyles.projectsContainer}>
-            <div className={projectsStyles.loader}></div>
-          </div>
-        </div>
+        <div>loading...</div>
       </Layout>
     )
   }
@@ -157,7 +155,8 @@ const Dashboard = () => {
   return (
     <Layout hasFocus={hasFocus}>
       <SEO title="dashboard" />
-      {/* could probably make a log out component */}
+
+      {/* log out component */}
       <p>
         <span
           onClick={logout}
@@ -165,42 +164,65 @@ const Dashboard = () => {
           role="button"
           tabIndex="0"
           className={dashStyles.logout}
+          style={dark ? { color: "rgb(51, 255, 51)" } : { color: "#0366D6" }}
         >
           log out
         </span>
       </p>
 
-      <Scrollable>
-        <>
-          {createNewProject && (
-            <EditProject
-              project={newProject}
-              isNew={true}
-              hideNew={hideNew}
-              save={save}
-              destroy={destroy}
-              setFocus={setFocus}
-            />
-          )}
-          {projects.map(project => (
-            <DashProject
-              project={project}
-              key={project.id}
-              edit={edit}
-              destroy={destroy}
-            />
-          ))}
-        </>
-      </Scrollable>
-
-      <i
-        className={`fas fa-plus ${dashStyles.addProject}`}
-        onClick={addNew}
-        onKeyDown={addNew}
-        role="button"
-        aria-label="add new project"
-        tabIndex={0}
-      ></i>
+      {/* settings component */}
+      <div className={dashStyles.settingsArea}>
+        <p className={dashStyles.settingsText}>Show Profile Pic</p>{" "}
+        <input
+          type="checkbox"
+          className={dashStyles.settingsInput}
+          onChange={updateProfilePicSetting}
+          checked={settings.showProfilePic}
+        />
+        <p className={dashStyles.settingsText}>Show Call to action</p>
+        <input
+          type="checkbox"
+          className={dashStyles.settingsInput}
+          onChange={updateCTASetting}
+          checked={settings.showCTA}
+        />
+        <br />
+        {/* update code list component */}
+        <p>current list:</p>
+        <p>{selectedProjects.join(", ")}</p>
+        <p className={dashStyles.settingsText}>update list:</p>
+        <input
+          type="text"
+          placeholder="project to add/remove"
+          style={{ width: "275px" }}
+          value={listItem}
+          onChange={e => {
+            setListItem(e.target.value)
+          }}
+        />
+        <div className={dashStyles.buttonContainer}>
+          <button
+            className={
+              dark
+                ? `button buttonDark ${dashStyles.addButton}`
+                : `button ${dashStyles.addButton}`
+            }
+            onClick={addListItem}
+          >
+            add
+          </button>
+          <button
+            className={dark ? `button buttonDark` : `button`}
+            style={{
+              width: "72px",
+              height: "28px",
+            }}
+            onClick={removeListItem}
+          >
+            remove
+          </button>
+        </div>
+      </div>
     </Layout>
   )
 }

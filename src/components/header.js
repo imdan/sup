@@ -17,6 +17,7 @@ const Header = ({ dark }) => {
   }
 
   const toggleNav = () => {
+    // super secret link to dashboard
     if (!showNav) {
       setBurger(!burger)
       setShowNav(!showNav)
@@ -32,8 +33,8 @@ const Header = ({ dark }) => {
 
   const width = typeof window !== "undefined" ? window.innerWidth : null
 
+  // mobile navabar, should prob move to own component
   if (width <= 500) {
-    // move to own component
     return (
       <>
         <header>
@@ -52,7 +53,7 @@ const Header = ({ dark }) => {
                 aria-label="open nav"
               ></i>
             ) : (
-              <img
+              <img //eslint-disable-line
                 src={dark ? "../x_w.svg" : "../x.svg"}
                 alt="nav toggler"
                 onClick={toggleNav}
@@ -77,22 +78,17 @@ const Header = ({ dark }) => {
     )
   }
 
+  // desktop navbar
   return (
     <>
       <header>
-        <div
-        // style={{
-        //   margin: `0 auto`,
-        //   maxWidth: "90vw",
-        //   // padding: `1.45rem 1.0875rem`,
-        // }}
-        >
+        <div>
           <Link to="/" className={headerStyles.logo} onClick={nod}>
             <img src={dark ? "../sup_w.svg" : "../sup.svg"} alt="sup." />
           </Link>
 
-          {/* <Link
-            to="/projects/"
+          <Link
+            to="/code/"
             className={
               dark
                 ? `${headerStyles.navLink} ${headerStyles.dark}`
@@ -100,8 +96,8 @@ const Header = ({ dark }) => {
             }
             activeClassName={headerStyles.active}
           >
-            work
-          </Link> */}
+            code
+          </Link>
           <Link
             to="/log"
             className={

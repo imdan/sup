@@ -1,4 +1,4 @@
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import React, { useState, useContext } from "react"
 import headerStyles from "../styles/header.module.css"
 import ModeContext from "../context/ModeContext"
@@ -20,9 +20,6 @@ const MobileNav = ({ show, hide, setHideNav, setShowNav }) => {
     // const link = e.target.href
     setHideNav(true)
     setCover(true)
-    // setTimeout(() => {
-    //   navigate(link)
-    // }, 275)
   }
 
   return (
@@ -41,15 +38,15 @@ const MobileNav = ({ show, hide, setHideNav, setShowNav }) => {
               }
         }
       >
-        {/* <Link
-          to="/projects/"
+        <Link
+          to="/code/"
           className={headerStyles.mobileLink}
           style={dark ? { color: "white" } : { color: "black" }}
           activeClassName={headerStyles.active}
           onClick={guide}
         >
-          work
-        </Link> */}
+          code
+        </Link>
         <Link
           to="/log"
           className={headerStyles.mobileLink}

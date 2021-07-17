@@ -11,6 +11,7 @@ h2 {
 .loader {
   font-size: 30px;
   opacity: 0.85;
+  text-align: center;
 }
 
 .loader:after {
@@ -23,6 +24,24 @@ h2 {
   animation-delay: 0.5s;
   content: ".";
   opacity: 0;
+}
+
+.item {
+  width: 42vw;
+  /* height: 100%; */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.25); */
+  border-radius: 5px;
+  margin: 0px auto;
+  text-align: left;
+  padding: 0px 10px 20px 10px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 500px) {
+  .item {
+    width: 78vw;
+    padding-bottom: 25px;
+  }
 }
 
 @keyframes loader {

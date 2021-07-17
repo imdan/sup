@@ -8,7 +8,10 @@
 import React from "react"
 import "./src/styles/main.css"
 import { ModeProvider } from "./src/context/ModeContext"
+import { SettingsProvider } from "./src/context/SettingsContext"
 
 export const wrapRootElement = ({ element }) => (
-  <ModeProvider>{element}</ModeProvider>
+  <ModeProvider>
+    <SettingsProvider>{element}</SettingsProvider>
+  </ModeProvider>
 )

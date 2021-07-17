@@ -1,30 +1,38 @@
-import React, { useEffect, useContext } from "react"
+import React, { useEffect, useContext, useState } from "react"
 import { navigate } from "gatsby"
 import indexStyles from "../styles/index.module.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import Socials from "../components/socials"
 import Particles from "../components/particles"
-import projectService from "../services/projects"
 import ModeContext from "../context/ModeContext"
+import SettingsContext from "../context/SettingsContext"
+import workService from "../services/work"
+import axios from "axios"
 
-// timing on hideForm still kinda weird on first submit (or only submit for anyone besides me...), I think it's the css animation
+// const settingsUrl = "http://localhost:3000/api/settings"
+const api_url = "https://sup-cool.herokuapp.com/"
 
 const IndexPage = () => {
   const { dark } = useContext(ModeContext)
+  const { settings, getSettings } = useContext(SettingsContext)
+  const [me, setMe] = useState([])
 
   useEffect(() => {
     const wakeHeroku = async () => {
       try {
-        const sup = await projectService.sup()
-        console.log(JSON.stringify(sup, null, 4))
+        const meData = await workService.getMe()
+        setMe(meData)
+        const sup = await axios.get(api_url)
+        getSettings()
+        console.log(JSON.stringify(sup.data, null, 4))
       } catch (exception) {
         console.error(exception)
       }
     }
 
     wakeHeroku()
-  }, [])
+  }, []) //eslint-disable-line
 
   const explore = () => {
     setTimeout(() => {
@@ -44,22 +52,30 @@ const IndexPage = () => {
             : `${indexStyles.homeMain}`
         }
       >
-        {/* <div className={indexStyles.square}></div> */}
-        <p style={{ fontSize: "20px" }}>connecting dots and stuff</p>
+        {settings.showProfilePic && (
+          <img
+            src={`${me.avatar_url}`}
+            alt="my face"
+            className={indexStyles.profilePic}
+          />
+        )}
+        <p style={{ fontSize: "20px" }}>{me.bio ? `${me.bio}` : ""}</p>
         <p className={indexStyles.aboutInfo}>
           structure / focus / consistency / ...
         </p>
-        {/* <Socials /> */}
-        <button
-          className={
-            !dark
-              ? `button ${indexStyles.explore}`
-              : `button buttonDark ${indexStyles.explore}`
-          }
-          onClick={explore}
-        >
-          contact
-        </button>
+
+        {settings.showCTA && (
+          <button
+            className={
+              !dark
+                ? `button ${indexStyles.explore}`
+                : `button buttonDark ${indexStyles.explore}`
+            }
+            onClick={explore}
+          >
+            contact
+          </button>
+        )}
       </main>
     </Layout>
   )

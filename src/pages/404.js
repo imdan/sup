@@ -11,7 +11,9 @@ const NotFoundPage = () => (
 
     <main className={notFoundStyles.main}>
       <h1>NOT FOUND</h1>
-      <p>oh no...you just hit a route that doesn&#39;t exist...</p>
+      <p style={{ margin: "10px 50px" }}>
+        ahh snap...you just hit a page that doesn&#39;t exist...
+      </p>
       <Link to="/">
         <p style={{ color: "black", cursor: "pointer" }}>...go home...</p>
       </Link>

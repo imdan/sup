@@ -14,7 +14,7 @@ const Scrollable = ({ children }) => {
               : scrollableStyles.topGradient
           }
         ></div>
-
+        <div style={{ height: "25px", width: "100%", display: "block" }}></div>
         <>{children}</>
 
         <div
